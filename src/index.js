@@ -9,10 +9,28 @@ var propriedade = $.ajax({
   }
 });
 
+var quadras = $.ajax({
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/Quadras.geojson",
+  dataType: "json",
+  success: console.log("Quadras data successfully loaded."),
+  error: function (xhr) {
+    alert(xhr.statusText);
+  }
+});
+
+var areasverdes = $.ajax({
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/AreasVerdes.geojson",
+  dataType: "json",
+  success: console.log("Areas Verdes data successfully loaded."),
+  error: function (xhr) {
+    alert(xhr.statusText);
+  }
+});
+
 
   /* when().done() SECTION*/
   // Add the variable for each of your AJAX requests to $.when()
-  $.when(propriedade).done(function() {
+  $.when(propriedade, quadras, areasverdes).done(function() {
 
   var mappos = L.Permalink.getMapLocation(zoom = 13, center = [-15.545756, -54.236441]);
 
@@ -102,6 +120,32 @@ var propriedade = $.ajax({
     }
   });
   
+  var AREASVERDES = L.Proj.geoJson(areasverdes.responseJSON, {
+    style: {
+      color: 'green',
+      weight: 2
+    },
+    onEachFeature: function( feature, layer ){
+      layer.bindPopup(
+        "<b>Id: </b>" + feature.properties.fid + "<br>" +
+        "<b>Área (m2): </b>" + feature.properties.Area.toLocaleString('de-DE', { maximumFractionDigits: 2 }) 
+      )
+    }
+  }).addTo(map);
+  
+    var QUADRAS = L.Proj.geoJson(quadras.responseJSON, {
+    style: {
+      color: 'blue',
+      weight: 2
+    },
+    onEachFeature: function( feature, layer ){
+      layer.bindPopup(
+        "<b>Id: </b>" + feature.properties.Id + "<br>" +
+        "<b>Área (m2): </b>" + feature.properties.Area.toLocaleString('de-DE', { maximumFractionDigits: 2 })
+      )
+    }
+  }).addTo(map);
+  
 
   var miniMap = new L.Control.MiniMap(Esri_NatGeoWorldMap, {
       position: 'topleft',
@@ -140,6 +184,8 @@ var propriedade = $.ajax({
 
   var overlays = {
 		"Propriedade": PROPRIEDADE,
+		"Áreas Verdes": AREASVERDES,
+		"Quadras": QUADRAS
 	};
 
 	L.control.layers(baseLayers, overlays).addTo(map);
