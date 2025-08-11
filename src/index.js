@@ -27,10 +27,19 @@ var areasverdes = $.ajax({
   }
 });
 
+var arruamentos = $.ajax({
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/Arruamentos.geojson",
+  dataType: "json",
+  success: console.log("Arruamentos data successfully loaded."),
+  error: function (xhr) {
+    alert(xhr.statusText);
+  }
+});
+
 
   /* when().done() SECTION*/
   // Add the variable for each of your AJAX requests to $.when()
-  $.when(propriedade, quadras, areasverdes).done(function() {
+  $.when(propriedade, quadras, areasverdes, arruamentos).done(function() {
 
   var mappos = L.Permalink.getMapLocation(zoom = 13, center = [-15.545756, -54.236441]);
 
@@ -133,7 +142,7 @@ var areasverdes = $.ajax({
     }
   }).addTo(map);
   
-    var QUADRAS = L.Proj.geoJson(quadras.responseJSON, {
+  var QUADRAS = L.Proj.geoJson(quadras.responseJSON, {
     style: {
       color: 'blue',
       weight: 2
@@ -142,6 +151,19 @@ var areasverdes = $.ajax({
       layer.bindPopup(
         "<b>Id: </b>" + feature.properties.Id + "<br>" +
         "<b>Área (m2): </b>" + feature.properties.Area.toLocaleString('de-DE', { maximumFractionDigits: 2 })
+      )
+    }
+  }).addTo(map);
+  
+  var ARRUAMENTOS = L.Proj.geoJson(arruamentos.responseJSON, {
+    style: {
+      color: 'black',
+      weight: 2
+    },
+    onEachFeature: function( feature, layer ){
+      layer.bindPopup(
+        "<b>Id: </b>" + feature.properties.fid + "<br>" +
+        "<b>Comprimento (m): </b>" + feature.properties.Comprimento.toLocaleString('de-DE', { maximumFractionDigits: 2 })
       )
     }
   }).addTo(map);
