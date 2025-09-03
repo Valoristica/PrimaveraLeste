@@ -149,7 +149,7 @@ var arruamentos = $.ajax({
     },
     onEachFeature: function( feature, layer ){
       layer.bindPopup(
-        "<b>Id: </b>" + feature.properties.Id + "<br>" +
+        "<b>Id: </b>" + feature.properties.fid + "<br>" +
         "<b>Área (m2): </b>" + feature.properties.Area.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
         "<b>Fase: </b>" + feature.properties.Fase
       )
