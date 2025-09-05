@@ -1,7 +1,7 @@
 // Add AJAX request for data
 
 var propriedade = $.ajax({
-  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/Propriedade.geojson",
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/docs/Propriedade.geojson",
   dataType: "json",
   success: console.log("Propriedade data successfully loaded."),
   error: function (xhr) {
@@ -10,7 +10,7 @@ var propriedade = $.ajax({
 });
 
 var quadras = $.ajax({
-  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/Quadras.geojson",
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/docs/Quadras.geojson",
   dataType: "json",
   success: console.log("Quadras data successfully loaded."),
   error: function (xhr) {
@@ -19,7 +19,7 @@ var quadras = $.ajax({
 });
 
 var areasverdes = $.ajax({
-  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/AreasVerdes.geojson",
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/docs/AreasVerdes.geojson",
   dataType: "json",
   success: console.log("Areas Verdes data successfully loaded."),
   error: function (xhr) {
@@ -28,7 +28,7 @@ var areasverdes = $.ajax({
 });
 
 var arruamentos = $.ajax({
-  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/Arruamentos.geojson",
+  url:"https://raw.githubusercontent.com/Valoristica/PrimaveraLeste/refs/heads/main/docs/Arruamentos.geojson",
   dataType: "json",
   success: console.log("Arruamentos data successfully loaded."),
   error: function (xhr) {
