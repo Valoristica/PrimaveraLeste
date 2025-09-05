@@ -208,7 +208,8 @@ var arruamentos = $.ajax({
   var overlays = {
 		"Propriedade": PROPRIEDADE,
 		"Áreas Verdes": AREASVERDES,
-		"Quadras": QUADRAS
+		"Quadras": QUADRAS,
+		"Arruamentos": ARRUAMENTOS
 	};
 
 	L.control.layers(baseLayers, overlays).addTo(map);
