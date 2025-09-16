@@ -151,7 +151,8 @@ var arruamentos = $.ajax({
       layer.bindPopup(
         "<b>Id: </b>" + feature.properties.fid + "<br>" +
         "<b>Área (m2): </b>" + feature.properties.Area.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
-        "<b>Fase: </b>" + feature.properties.Fase
+        "<b>Fase: </b>" + feature.properties.Fase + "<br>" +
+        "<b>Defronte à Rodovia?: </b>" + feature.properties.Defronte
       )
     }
   }).addTo(map);
