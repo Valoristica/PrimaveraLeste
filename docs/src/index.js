@@ -153,7 +153,7 @@ var arruamentos = $.ajax({
         "<b>Área (m2): </b>" + feature.properties.Area.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
         "<b>Área (ha): </b>" + feature.properties.Areaha.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
         "<b>PU (R$/m2): </b>" + feature.properties.PU.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
-        "<b>VGV: </b>" + feature.properties.PT.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
+        "<b>VGV (R$): </b>" + feature.properties.PT.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + "<br>" +
         "<b>Fase: </b>" + feature.properties.Fase + "<br>" +
         "<b>Defronte à Rodovia?: </b>" + feature.properties.Defronte
       )
