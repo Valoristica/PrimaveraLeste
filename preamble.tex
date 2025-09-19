@@ -1,0 +1,45 @@
+\usepackage[brazil]{babel}
+\usepackage{titling}
+\usepackage[final]{pdfpages}
+\usepackage{geometry}
+\usepackage{subfig}
+\usepackage{breqn}
+\usepackage{booktabs}
+%\usepackage{longtable}
+\usepackage{textcomp}
+\usepackage{graphics}
+\usepackage{lastpage}
+\usepackage{epigraph}
+%\usepackage{csquotes}
+\usepackage{dirtytalk}
+\usepackage{lscape}
+\setlength{\parindent}{1.25cm} % Default is 15pt.
+\usepackage{indentfirst}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5} 
+%\usepackage{fontspec} % xelatex only
+%%-----------------------------------------------------------------------
+%\setmainfont{Times New Roman}
+%\setsansfont{Arial}
+%\setmonofont[Color={0019D4}]{Courier New}
+%%-----------------------------------------------------------------------
+%\usepackage{newtxtext} % Times New Roman
+\usepackage{fontawesome5}
+% with fontawesome5 you can use \faRProject to refer to R or use \Rlogo
+\newcommand{\Rlogo}{\protect\includegraphics[height=1.8ex,keepaspectratio]{Rlogo.png}}
+\usepackage{fancyhdr}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=15mm, height = 11mm]{logo.png}}
+\fancyhead[CO,CE]{
+%  \includegraphics[width=15mm, height = 11mm]{logo.png}\\
+\textbf{LAUDO DE AVALIAÇÃO}\\
+\textbf{MÉTODO INVOLUTIVO}\\
+%  Av. Afonso Delambert Neto, nº 103, Sala 7B, Lagoa da Conceição, Florianópolis/SC\\
+%  (48)98426-1422
+}
+\fancyfoot[CO, CE]{Fazenda Rio Grande, Primavera do Leste, MT\\
+Método Involutivo
+}
+\fancyfoot[R]{\thepage~de~\pageref{LastPage}}

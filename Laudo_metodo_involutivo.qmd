@@ -1,0 +1,1582 @@
+---
+title: "Laudo de Avaliação"
+subtitle: "Valor de uma gleba urbana"
+author: 
+- "Luiz Fernando Palin Droubi"
+- "Lutemberg Florêncio"
+date: "`r format(Sys.time(), '%d/%m/%Y')`"
+output:
+  pdf_document: 
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    keep_tex: yes
+  html_document:
+    df_print: paged
+    keep_md: yes
+header-includes: 
+  - \usepackage[brazil]{babel} 
+  - \usepackage{titling}
+  - \usepackage[final]{pdfpages}
+  - \usepackage{geometry}
+  - \usepackage{lastpage}
+bibliography: bibliography.bib
+csl: ABNT_UFPR_2011-Mendeley.csl
+documentclass: article
+classoption: a4paper
+urlcolor: blue
+linkcolor: red
+params:
+  Ag: 3159722 # Área da Gleba (m2)
+  Av: 696176 # Áreas Verdes (m2)
+  Ai: 0  # Área Institucional (m2)
+  Au: 2130000 # Área útil (m2)
+  Ar: 333.545 # m2
+  BDIUrb: 23.09 # BDI do Urbanizador (%)
+  DILot: 4.89 # DI do Loteador (%)
+  Dv: 6  # Despesas de Venda (%)
+  L: 20  # Taxa de Lucro do Loteador (%)
+  Tx: 6.73 # Impostos do Loteador (%)
+  Infl: 5.13 # % a.a.
+  Ra: 15.00 # % a.a.
+  Rb: 15.00 # % a.a.
+  P: 35 # % 
+  Ia: 2 # %
+  M: 0
+  V: 1 # % a.m.
+  Vv: 3  # lotes/mes
+  D0: 11 # meses para o início das vendas
+  Ta: 59 # Prazo Total do Empreendimento (urbanização + vendas)
+  Na: 48 # Prazo Estimado para a venda dos lotes
+  Dc: 2  # Despesas Iniciais com a aquisição da gleba (% do Custo de Const.)
+  Cd: 100000 # Eventuais custos com demolições (R$)
+  VUlote: 250 # Valor Unitário do Lote Paradigma (R$/m2)
+  Alote: 15000 # Área do Lote Paradigma (m2)
+  Etapas: 3
+  Duracao: 24
+  Nsim: 1000
+  range_CC: [0.85, 1.15]
+  range_VU: [.90, 1.10]
+  range_TMA: [0.85, 1.15]
+  data: data.csv
+  fundamentacao: Grau III de fundamentação
+  pini: aval_glebas_ref_pini.csv
+  porcentagem: !r c(1, 1, 0, 0, 1, 1, 1, 1, 1, 1)
+  data_vistoria: !r as.Date("2025-07-10")
+  lat: N
+  lon: E
+  objetivo: Avaliação do valor de mercado do terreno (gleba) onde está situada a Fazenda Rio Grande
+  finalidade: Alienação da gleba de forma parcelada
+  interessado: Protásio Vargas Neto
+  proprietario: Antônio Agilberto Vargas e Elizabete Mascarello
+  endereco: Rodovia BR 070 Km 272 a Esquerda, Primavera do Leste, MT
+  matricula: 34.497 e 45.556 do Livro n.º 2 do Registro de Imóveis da Comarca de Primavera do Leste - MT
+  metodo: Método Involutivo
+  proj4string: +proj=utm +zone=21 +south +units=m +datum=WGS84
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, cache.path = "cache/", 
+                      message = FALSE, warning = FALSE, 
+                      fig.ext='png', fig.align = "center", 
+                      fig.path = "images/", fig.pos = "H",
+                      fig.asp = 1, out.width = "0.7\\linewidth",
+                      dpi = 600)
+type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+library(FinCal)
+library(readr)
+library(appraiseR)
+library(stargazer)
+library(proj4)
+library(pander)
+library(knitr)
+library(kableExtra)
+library(latex2exp)
+library(dplyr)
+#library(TeachBayes)
+library(LearnBayes)
+library(latex2exp)
+library(ggplot2)
+theme_set(theme_bw())
+# library(ggthemes)
+library(ggfortify)
+library(car)
+library(highlight)
+library(Hmisc)
+library(rvest)
+library(lubridate)
+```
+
+```{r, include = FALSE}
+quadras <- st_read("./docs/Quadras.geojson", "Quadras")
+```
+
+
+```{r variaveis, echo = FALSE}
+# BDI
+BDIUrb <- params$BDIUrb # BDI da empresa de construção (urbanização)
+DILot <- params$DILot # sem Lucro, Despesas de Venda e Impostos
+# Despesas para venda
+Dv <- params$Dv # Despesas de Venda (Corretagens)
+L <- params$L   # Lucro do Loteador
+Tx <- params$Tx # Impostos
+# Taxas
+Ra <- params$Ra/100 # Taxa de Juros do Capital Investido
+ra <- (1 + Ra)^(1/12) - 1
+Rb <- params$Rb/100 # Taxa de Juros do Capital Realizado
+rb <- (1 + Rb)^(1/12) - 1
+Infl <- params$Infl/100 # Inflação (a.a.)
+infl <- (1 + Infl)^(1/12) - 1
+P <- params$P/100 # Prêmio de Risco (% da Ra)
+Ia <- params$Ia/100
+M <- params$M/100 # Taxa de Desconto para o IPTU (transf. da gleba em lotes)
+V <- params$V/100 # 
+# Prazos
+Ta <- params$Ta # Prazo Total do Empreendimento (urbanização + vendas)
+Na <- params$Na # Prazo Estimado para a venda dos lotes
+# Caracteristicas da gleba
+Ag <- params$Ag # Área Total da Gleba
+Av <- params$Av # Áreas Verdes
+Ai <- params$Ai # Área Institucional
+Au <- params$Au # Área dos Lotes
+Ar <- params$Ar # Área dos arruamentos
+Fu <- Au/Ag
+# Despesas com aquisicao da gleba
+Dc <- params$Dc
+Cd <- params$Cd # Eventuais custos de demolição
+# Divisao das Etapas
+VUlote <- params$VUlote
+Alote <- params$Alote
+Lotes <- Au/Alote
+Etapas <- params$Etapas
+n1 <- sum(quadras[which(quadras$Fase==1), "Lotes", drop = T])
+n2 <- sum(quadras[which(quadras$Fase==2), "Lotes", drop = T])
+n3 <- sum(quadras[which(quadras$Fase==3), "Lotes", drop = T])
+# Duração das Etapas
+Vv <- params$Vv # /mês - Velocidade de Vendas
+D0 <- params$D0
+D1 <- trunc(n1/Vv)
+D2 <- trunc(n2/Vv)
+D3 <- trunc(n3/Vv)
+Nsim <- params$Nsim
+range_CC <- params$range_CC
+range_VU <- params$range_VU
+range_TMA <- params$range_TMA
+names(range_CC) <- c("min", "max")
+names(range_VU) <- c("min", "max")
+names(range_TMA) <- c("min", "max")
+```
+
+```{r dados}
+VL <- (n1+n2+n3)*VUlote*Alote
+pini <- read_csv2(params$pini) |>
+  mutate(`%` = params$porcentagem,
+         `Valor Unitario` = Custo*`%`/1000,
+         `Valor Total` = `Valor Unitario`*Au)
+CcUnitario <- sum(pini$`Valor Unitario`)
+Cc <- sum(pini$`Valor Total`)
+# Du <-  Cc + Dc*VL + Cd
+Di <- Cc*Dc/100 + Cd
+Du <- Cc + Di
+```
+
+\newpage
+
+# Resumo {-}
+
+1. **Nome Oficial**: Fazenda Rio Grande
+
+2. **Endereço do Imóvel**: `r params$endereco`.
+
+3. **Tipo do Imóvel**: Lote
+
+4. **Solicitante**: `r params$interessado`.
+
+5. **Proprietário**: União Federal
+
+6. **Objetivo**: `r params$objetivo`.
+
+7. **Finalidade**:  `r params$finalidade`.
+
+8. **Resumo dos Valores de Avaliação**:
+
+\begin{center}
+\textbf{Estimativa de Valor Central:}
+\end{center}
+
+$$V_{gleba} = \text{R\$ }68.000.000,00$$
+
+\begin{center}
+\vspace*{2\baselineskip}
+\textbf{Intervalo de Valores Admissíveis:}
+\end{center}
+
+$$[52.000.000,00; \;87.500.000,00]$$
+
+9. **Especificação**: `r params$fundamentacao`.
+
+10. **Data de Referência**: `r params$data_vistoria`
+
+11. **Responsáveis técnicos**: \theauthor
+
+\newpage
+
+# Introdução
+
+O presente Laudo foi elaborado seguindo os preceitos NBR-14.653 -- Norma 
+Brasileira para Avaliação de Bens -– Partes 1 e 2 -- da Associação Brasileira de 
+Normas Técnicas [@NBR1465301; @NBR1465302].
+
+##  Objeto
+
+O imóvel objeto da avaliação é constituído por um terreno urbano com área de 
+`r brf(params$Ag)`, localizado junto a `r params$endereco`. 
+
+A NBR-14.653-1/2001 [-@NBR1465301], regramento da matéria, define em seu item 
+3.44:
+
+> valor de mercado: Quantia mais provável pela qual se negociaria 
+voluntariamente e conscientemente um bem, em uma data de referência, dentro das
+condições do mercado vigente.
+
+# Objetivo e Finalidade
+
+- **Objetivo**  
+
+`r params$objetivo`.
+
+- **Finalidade**  
+
+`r params$finalidade`.
+
+# Metodologia Adotada
+
+`r params$metodo`.
+
+## Escolha com justificativa:
+
+A NBR-14.653-1/2019 [@NBR1465301], conceitua o Método Involutivo em seu item 
+7.2.2, in verbis:
+
+> Método Involutivo: Identifica o valor do bem, alicerçado no seu 
+aproveitamento eficiente, baseado em modelo de estudo de viabilidade 
+técnico-econômica, mediante hipotético empreendimento compatível com as 
+características do bem e com as condições do mercado no qual está inserido, 
+considerando-se cenários viáveis para execução e comercialização do produto. O
+método involutivo pode identificar o valor de mercado. No caso de utilização de
+premissas especiais, o resultado é um valor especial.
+
+Utilizou-se o Método Involutivo devido a inexistência de imóveis em quantidade 
+necessária e suficientemente semelhantes ao avaliando para adoção do Método 
+Comparativo Direto de Dados de Mercado. Tal limitação justifica o emprego do
+método involutivo. 
+
+# Pressupostos, ressalvas e fatores limitantes
+
+Os dados obtidos no mercado imobiliário local foram fornecidos por
+corretores e imobiliárias, constituindo, portanto, premissas aceitas como
+corretas.
+
+O imóvel foi avaliado na suposição de que esteja livre e desembaraçado
+de quaisquer ônus, encargos ou gravames de qualquer natureza que possam
+afetar o seu valor, pressupondo que as áreas e características informadas, bem
+como seus respectivos títulos estejam corretos e que a documentação enviada
+para consulta seja a vigente.
+
+O signatário não assume responsabilidade sobre matéria legal ou de
+engenharia, fornecidos pelo interessado.
+
+Não foram efetuadas quaisquer análises jurídicas da documentação do
+imóvel, por não se integrarem com o escopo desta avaliação, não tendo sido
+efetuadas medições de campo para a finalidade desta avaliação. Não foram
+consultados os órgãos públicos de âmbito Municipal, Estadual ou Federal,
+quanto à situação legal do imóvel perante os mesmos.
+
+Esta avaliação é independente e livre de quaisquer vantagens ou
+envolvimento das pessoas que realizaram os serviços.
+
+Os valores encontrados estão fixados em moeda corrente Real (R$) e
+para a data base de seus cálculos.
+
+As avaliações foram feitas de acordo com as normas brasileiras de
+avaliação NBR 14653-1 – “Avaliação de bens – Parte 1: Procedimentos Gerais”
+(ABNT, 2019) e NBR 14653-2 – “Avaliação de bens – Parte 2: Imóveis urbanos”
+(ABNT, 2011).
+
+# Localização do Imóvel
+
+O imóvel está situado às margens da `r params$endereco`.
+
+## Descrição da região, entorno e acessos
+
+O imóvel situa-se em região com densidade de ocupação média e com categoria de
+uso principalmente residencial. Encontram-se espaços não ocupados antropicamente
+bem como loteamentos consolidados.
+
+Dentro do mercado imobiliário local o imóvel apresenta boa localização e 
+acessibilidade através das principais vias da região.
+
+O bairro ao qual pertence o imóvel avaliando conta com boa infraestrutura.
+A acessibilidade viária é muito boa.
+
+A Figura 1 mostra a localização do aeroporto sobre uma imagem de fundo obtida de
+Stadia Maps.
+
+```{r, include=FALSE}
+library(sf)
+library(ggmap)
+sbfl <- c(left = -54.25, bottom = -15.56, 
+          right = -54.215, top = -15.532)
+gleba <- st_read("./docs/Propriedade.geojson")
+gleba <- st_transform(gleba, crs = 4326)
+```
+
+
+```{r SBFL, fig.cap="Localização do SBFL.", out.width="90%"}
+get_stadiamap(sbfl, zoom = 14, maptype = "stamen_terrain") |> 
+  ggmap() +
+  # coord_sf(crs = st_crs(31982)) + # force the ggplot2 map to be in 31982
+  geom_sf(data = gleba, aes(fill = Area, alpha = .05), inherit.aes = FALSE, show.legend = FALSE) 
+```
+
+# Vistoria
+
+A vistoria foi realizada em `r params$data_vistoria`, conforme laudo de vistoria
+técnica.
+
+# Diagnóstico de Mercado
+
+O imóvel está perfeitamente inserido no mercado de imóveis tipo lotes 
+residenciais e, em menor proporção, comerciais, encontrados no local. Sua
+localização é muito boa e tem facilidade de acesso.
+
+Quanto à expectativa do avaliador em relação ao desempenho do imóvel
+avaliando no mercado, pode-se citar:
+
+a. Quantidade de ofertas de bens similares: pequena em empreendimentos
+do tipo do projeto hipotético.
+b. Público alvo para absorção do imóvel: investidores e compradores para
+moradia.
+c. Desempenho de mercado: dada a conjuntura atual, com índices de
+inflação moderados, taxa de juros alta e expectativa de médio crescimento do
+PIB, o mercado de imóveis de maneira geral apresenta médio desempenho.
+d. Absorção pelo mercado: a velocidade absorção do imóvel pelo mercado é 
+relativamente boa;
+e. Facilitadores para negociação do bem: localização muito boa e facilidade
+de acesso ao centro da cidade são, dentre outros, atrativos para a venda do 
+imóvel paradigma.
+f. Liquidez: dadas as características do imóvel, público alvo e, principalmente 
+da atual conjuntura econômica, um imóvel paradigma pode ser considerado de 
+média liquidez.
+
+# Procedimentos metodológicos
+
+## Métodos de avaliação
+
+O método a ser usado numa avaliação, segunda a NBR 14653-1:2019,
+depende da natureza do bem a ser avaliado e da finalidade da avaliação, da
+qualidade e quantidade de informações coletadas no mercado imobiliário. Sua
+escolha deve ser justificada, objetivando-se retratar o comportamento do
+mercado por meio de modelos que expliquem seu valor.
+
+Os métodos citados na NBR 14653-1:2019 são:
+
+a. **Métodos para identificar o valor de um bem, de seus frutos e direitos**
+  - **Método comparativo direto de dados de mercado:** Identifica o valor de
+mercado do bem por meio de tratamento técnico dos atributos dos
+elementos comparáveis, constituintes da amostra.
+  -  **Método involutivo:** estudo de viabilidade técnico-econômica, mediante
+hipotético empreendimento (que considere aproveitamento eficiente do
+terreno em avaliação) compatível com as características do bem e com
+as condições do mercado no qual está inserido, considerando-se cenários
+viáveis para execução e comercialização do produto.
+  - **Método evolutivo:** Identifica o valor do bem pelo somatório dos valores
+de seus componentes. Caso a finalidade seja a identificação do valor de
+mercado, deve ser considerado o fator de comercialização.
+  - **Método da capitalização da renda:** Identifica o valor do bem, com base
+na capitalização presente da sua renda líquida prevista, considerando-se
+cenários viáveis.
+
+b. **Métodos para identificar o custo de um bem**
+  - **Método comparativo direto de custo:** Identifica o custo do bem por meio
+de tratamento técnico dos atributos dos elementos comparáveis,
+constituintes da amostra.
+  - **Método da quantificação de custo:** Identifica o custo do bem ou de suas
+partes por meio de orçamentos sintéticos ou analíticos a partir das
+quantidades de serviços e respectivos custos diretos e indiretos.
+
+c. **Métodos para identificar indicadores de viabilidade da utilização
+econômica de um empreendimento**
+  - Os procedimentos avaliatórios usuais com a finalidade de determinar
+indicadores de viabilidade da utilização econômica de um empreendimento são 
+baseados no seu fluxo de caixa projetado, a partir do qual são determinados 
+indicadores de decisão baseados no valor presente líquido, taxas internas de
+retorno, tempos de retorno, dentre outros.
+
+A NBR 14653-2:2011 em seu item 8.1.1 coloca que:
+
+> Para a identificação do valor de mercado, sempre que possível preferir o 
+método comparativo direto de dados de mercado (...).
+
+## Método e Técnicas Adotados
+
+Para a avaliação do terreno (gleba) onde está situado o aeroporto foi aplicado o 
+método involutivo, considerando um loteamento hipotético.
+
+As receitas do empreendimento foram obtidas a partir das vendas dos lotes, 
+baseadas no valor de mercado de um lote paradigma, cujo valor foi obtido pelo
+método comparativo direto de dados de mercado usando a técnica da regressão 
+linear clássica.
+
+Para o levantamento dos desembolsos necessários à urbanização da gleba foi feito
+um orçamento usando custos paramétricos.
+
+O modelo econômico-financeiro usado para avaliação do terreno (gleba) será 
+detalhado a seguir.
+
+## Método Involutivo
+
+### Princípio
+
+O método involutivo baseia-se no estudo de viabilidade econômica de 
+aproveitamento de um terreno procurando determinar o valor do mesmo através
+do estudo das condições máximas permissíveis e com aproveitamento eficiente
+da área a ser futuramente utilizada.
+
+O aproveitamento máximo é o que as prefeituras municipais permitem em seu Plano 
+Diretor.
+
+O aproveitamento eficiente é a utilização mais adequada para o local em
+questão (comercial, residencial, misto, industrial, ...).
+
+### Roteiro de Aplicação
+
+A NBR 14653-2:2011 apresenta as seguintes etapas para a aplicação do
+método involutivo (item 8.2.2):
+
+a. Vistoria do imóvel: caracterização de região, caracterização do terreno,
+caracterização das edificações e benfeitorias do entorno.
+b. Projeto hipotético: Fazer um projeto de ocupação, considerando o máximo
+aproveitamento eficiente do terreno;
+c. Pesquisa de valores: tem como objetivo estimar o valor de mercado do
+produto imobiliário (lote, apartamento, sala comercial, etc.) projetado e sua
+variação ao longo do tempo.
+d. Previsão de receitas: são calculadas a partir da pesquisa de mercado,
+devendo-se considerar a eventual valorização imobiliária, a forma de
+comercialização e o tempo de absorção no mercado.
+e. Lançamento do custo de produção do projeto hipotético: corresponde à
+apuração dos custos diretos e indiretos. Principais itens a ser levado em
+conta:
+  - Custos de aquisição e legalização do terreno (impostos e taxas
+cartoriais);
+  - elaboração e aprovação do projeto;
+  - custo da construção, incluindo o lucro do construtor;
+  - Lucro do empreendimento (lucro da incorporação)
+f. Previsão de despesas adicionais. Exemplos:
+  - Publicidade;
+  - Comercialização das unidades (corretagem).
+g. Margem de lucro do incorporador (item 8.2.2.7): Quando for usada margem
+de lucro, em modelos que não utilizem fluxo de caixa, esta deve ser
+considerada proporcional ao risco do empreendimento, que está diretamente
+ligado à quantidade de unidades resultantes do projeto, ao montante
+investido e ao prazo total previsto para retorno do capital. A margem de lucro
+adotada em modelos estáticos deve ter relação com o que é praticado no
+mercado.
+h. Prazos: no caso de adoção de modelos dinâmicos, é recomendado que:
+  - o prazo para a execução do projeto hipotético seja compatível com as
+suas características físicas, disponibilidade de recursos, tecnologia e
+condições mercadológicas;
+  - o prazo para a venda das unidades seja compatível com o mercado.
+i. Taxas: No caso de adoção de modelos dinâmicos recomenda-se explicitar as
+taxas de valorização imobiliária, de evolução de custos e despesas, de juros
+do capital investido e a mínima de atratividade.
+j. Modelo: o valor do terreno é obtido pela diferença entre as receitas e o total
+de custos e despesas. A avaliação poderá ser realizada com a utilização dos
+seguintes modelos, em ordem de preferência:
+  - Por fluxos de caixa específicos;
+  - com a aplicação de modelos simplificados dinâmicos
+  - com a aplicação de modelos estáticos.  
+  
+# Construção do Modelo Econômico-Financeiro
+
+Serão detalhados neste item todos os procedimentos usados para a
+construção do modelo econômico-financeiro usado para avaliar a gleba.
+
+## Software utilizados
+
+Foi elaborado um [Sistema de Informações Geográficas
+(SIG)](https://lfpdroubi.github.io/SBFL/) em linguagem JavaScript, em conjunto
+com a biblioteca [leaflet](https://leafletjs.com/), após a confecção das camadas
+realizada com o auxílio software livre QGIS, contendo o anteprojeto do
+loteamento hipotético.
+
+Todos os outros cálculos foram efetuados na linguagem R, versão 
+`r paste(R.version$major, ".", R.version$minor, sep = "")`.
+
+## Projeto de Loteamento Hipotético
+
+A Figura abaixo mostra um estudo preliminar do projeto hipotético considerado.
+Nesta Figura, em verde-escuro podem ser vistas as áreas verdes a serem reservadas;
+as áreas reservadas para as áreas institucionais do loteamente podem ser vistas
+em azul-escuro; em amarelo-escuro podem ser vistas as áreas reservadas para a
+construção de lotes (quadras).
+
+```{r, include = FALSE}
+AV <- st_read("./docs/AreasVerdes.geojson")
+# AI <- st_read("../SBFL.gpkg", layer = "AreasInstitucionais")
+Q <- st_read("./docs/Quadras.geojson")
+AV <- st_transform(AV, crs = 4326)
+# AI <- st_transform(AI, crs = 4326)
+Q <- st_transform(Q, crs = 4326)
+```
+
+
+```{r PH-SBFL, fig.cap="Projeto Hipotético.", out.width="90%"}
+get_stadiamap(sbfl, zoom = 14, maptype = "stamen_terrain") |> 
+  ggmap() +
+  # coord_sf(crs = st_crs(31982)) + # force the ggplot2 map to be in 31981
+  geom_sf(data = gleba, aes(fill = Area, alpha = .05), inherit.aes = FALSE, show.legend = FALSE) +
+  geom_sf(data = AV, aes(fillColor = "darkgreen"), inherit.aes = FALSE) +
+#  geom_sf(data = AI, aes(fillColor = "darkblue"), inherit.aes = FALSE) +
+  geom_sf(data = Q, aes(fillColor = "#8B8000"), inherit.aes = FALSE)
+```
+
+Deste estudo preliminar foram obtidas as áreas mostradas na Tabela 1 abaixo:
+
+
+|Descrição                | Área (m2)   | Proporção      |
+|:------------------------|------------:|---------------:|
+| Áreas Verdes e de lazer | `r brf(Av)` | `r pct(Av/Ag)` |
+| Áreas dos Lotes (útil)  | `r brf(Au)` | `r pct(Au/Ag)` |
+| Árruamentos e outros    | `r brf(Ar)` | `r pct(Ar/Ag)` |
+Table: Subdivisão do loteamento hipotético.
+
+A Tabela 1 mostra que `r pct(params$Au/Ag)` da área da gleba podem ser
+transformados em lotes, totalizando assim `r brf(Au)`m2 de área vendável. 
+Considerando um lote de `r params$Alote` m2, esta área resulta em 
+`r trunc(params$Au/params$Alote)` lotes para vender.
+
+Devido ao grande número de lotes, o fluxo de caixa do empreendimento
+será dividido em `r params$Etapas` etapas de vendas, cada uma com duração de 
+`r params$Duracao` meses. Na primeira etapa serão vendidos `r n1` lotes, na 
+segunda etapa serão vendidos `r n2` lotes e, na terceira etapa serão vendidos
+os lotes restantes (`r n3`). A velocidade de venda de `r Vv` lotes mensais foi
+adotada, o que resulta numa duração total de `r D1+D2+D3` meses para o 
+empreendimento (`r D1` + `r D2` + `r D3`).
+
+As Figuras \ref{fig:Etapa1} a \ref{fig:Etapa3} mostram as etapas consideradas. 
+Na Primeira Etapa serão urbanizados e vendidos os lotes das quadras que se 
+encontram coladas ao bairro existente do Carianos. Na Segunda Etapa serão 
+comercializados os lotes que se encontram, em sua maioria, em torno da pista
+de pouso e decolagem (PPD) existente. Finalmente, na Terceira Etapa, serão
+comercializados os lotes que se encontram mais ao sul do loteamento, nas 
+proximidades do bairro Tapera.
+
+```{r}
+quadras <- st_transform(quadras, crs = 4326)
+```
+
+
+```{r Etapa1, fig.cap = "Etapa 1."}
+get_stadiamap(sbfl, zoom = 14, maptype = "stamen_terrain") |> 
+  ggmap() +
+  # coord_sf(crs = st_crs(31982)) + # force the ggplot2 map to be in 31982
+  geom_sf(data = quadras[which(quadras$Etapa == 1), ], 
+          aes(fillColor = "darkblue"), inherit.aes = FALSE) 
+```
+
+
+```{r Etapa2, fig.cap = "Etapa 2."}
+get_stadiamap(sbfl, zoom = 14, maptype = "stamen_terrain") |> 
+  ggmap() +
+  # coord_sf(crs = st_crs(31982)) + # force the ggplot2 map to be in 31982
+  geom_sf(data = quadras[which(quadras$Etapa == 2), ], 
+          aes(fillColor = "darkblue"), inherit.aes = FALSE) 
+```
+
+```{r Etapa3, fig.cap = "Etapa 3."}
+get_stadiamap(sbfl, zoom = 14, maptype = "stamen_terrain") |> 
+  ggmap() +
+  # coord_sf(crs = st_crs(31982)) + # force the ggplot2 map to be in 31982
+  geom_sf(data = quadras[which(quadras$Etapa == 3), ], 
+          aes(fillColor = "darkblue"), inherit.aes = FALSE) 
+```
+
+
+## Estimativas de Receitas
+
+O valor de cada lote, conforme mostrado no laudo do Método Comparativo Direto de Dados de Mercado (MCDDM), é R\$ 600.000,00. A Tabela 2 apresenta um resumo das estimativas de receitas por etapa e do Valor Global de Vendas (VGV).
+
+| ETAPA    | LOTES | RECEITA (R$)     |
+|:---------|------:|-----------------:|
+| 1ª Etapa | 50    |   150.000.000,00 |
+| 2ª Etapa | 50    |   150.000.000,00 |
+| 3ª Etapa | 42    |   126.000.000,00 |
+Table: Estimativas de Receitas por Etapa
+
+## Estimativas de Custos de Urbanização
+
+Para a estimativa dos custos de urbanização foram usados custos publicados pela
+PINI, que apresenta valores unitários para 1.00 m2 de área útil do loteamento. O
+[ANEXO II] apresenta uma tabela destes valores.
+
+A Tabela 3 apresenta os custos de urbanização para as diferentes etapas consideradas.
+
+| SERVIÇO                                         | CUSTO PINI | 1ª ETAPA   | 2ª ETAPA   | 3ª ETAPA   |
+|:------------------------------------------------|-----------:|-----------:|-----------:|-----------:|
+| Topografia                                      | 12.060,06  | 100%       | 100%       | 100%       |
+| Terraplanagem leve                              |  2.078,35  | 100%       | 100%       | 100%       |
+| Terraplanagem média                             |  5.968,19  | 0%         | 0%         | 0%         |
+| Terraplanagem pesada                            | 15.693,02  | 0%         | 0%         | 0%         |
+| Rede de água potável                            | 11.959,62  | 100%       | 100%       | 100%       |
+| Rede de Esgoto                                  | 28.885,35  | 100%       | 100%       | 100%       |
+| Drenagem de Águas pluviais: galerias            | 11.881,14  | 100%       | 100%       | 100%       |
+| Drenagem de Águas pluviais: guias e sarjetas    |  9.786,87  | 100%       | 100%       | 100%       |
+| Pavimentação                                    | 31.994,26  | 100%       | 100%       | 100%       |
+| Rede de Iluminação Pública                      |  3.880,58  | 100%       | 100%       | 100%       |
+| CUSTO TOTAL                                     |  -         | 112.526,23 | 112.526,23 | 112.526,23 |
+Table: Custo de urbanização por 1.000 m2 de área útil.
+
+A Tabela 4 mostra um resumo dos custos totais de urbanização por etapa.
+
+| ETAPA    | LOTES |  ÁREA ÚTIL (M2)   | CUSTOS (R$)      |
+|:---------|------:|------------------:|-----------------:|
+| 1ª Etapa | 50    |   750.000,00      |  84.394.672,50   |
+| 2ª Etapa | 50    |   750.000,00      |  84.394.672,50   |
+| 3ª Etapa | 42    |   630.000,00      |  70.891.524,90   |
+| TOTAL    | 142   | 2.130.000,00      | 239.680.869,90   |
+Table: Estimativas de Receitas por Etapa
+
+## Benefícios e Despesas Indiretas
+
+Para os benefícios e despesas indiretas (BDI) do urbanizador será adotada a taxa 
+de 23,02%, atendendo o Acórdão nº 2622/2013 do Tribunal de Contas da União (TCU)
+que estabelece valores de BDI por tipos de obras públicas e para aquisição de 
+materiais e equipamentos.
+
+Como não existe especificada a atividade do loteador neste acórdão, fez-se uma
+média ponderada pelos custos atribuídos às atividades ali especificadas. Os
+custos são aqueles apresentados na Tabela 3, sendo que os custos dos serviços de
+topografia são divididos pela metade entre as atividades “construção de
+rodovias” e “redes de abastecimento de água e coleta de esgoto” constantes no
+referido acórdão. A Tabela 5 apresenta os resultados desta ponderação.
+
+| SERVIÇO                | BDI ACÓRDÃO | CUSTOS     | PESO  | BDI URB. |
+|:-----------------------|------------:|-----------:|------:|---------:|
+| RODOVIAS               | 20,97%      |  40.102,64 | 0,356 |  7,47%   |
+| REDES (ÁGUAS + ESGOTO) | 24,18%      |  68.543,01 | 0,609 | 14,73%   |
+| REDE ELÉTRICA          | 25,84%      |   3.880,58 | 0,034 |  0,89%   |
+| TOTAL                  | -           | 112.526,23 | 1,00  | 23,09%   |
+Table: Determinação do BDI do Urbanizador.
+
+A parcela de lucros (benefícios) não foi considerada para o loteador
+(empreendedor), pois seus benefícios foram contemplados na taxa usada para
+descontar o fluxo de caixa (FC). A Tabela 6 mostra a determinação das despesas
+indiretas do loteador para os componentes administração central, seguros mais
+garantias e despesas financeiras. Foram considerados os valores do primeiro
+quartil sugeridos no Acórdão nº 2622/2013 (TCU), adaptando desta forma estes
+custos para o loteador, que tem uma estrutura gerencial mais enxuta. A
+ponderação foi efetuada usando-se os mesmos pesos apresentados na Tabela 5.
+
+| SERVIÇO                 | ADM. C.      | S + G             | DESP. FINAN. | SOMA  | DI LOT. |
+|:------------------------|-------------:|------------------:|-------------:|------:|--------:|
+| RODOVIAS                | 3,80%        | 0,32%             | 1,02%        | 5,14% | 1,83%   |
+| REDES (ÁGUAS + ESGOTO)  | 3,43%        | 0,28%             | 0,94%        | 4,65% | 2,83%   |
+| REDE ELÉTRICA           | 5,29%        | 0,25%             | 1,01%        | 6,55% | 0,23%   |
+| TOTAL                   | -            | -                 | -            | -     | 4,89%   |
+Table: Despesas Indiretas do Loteador.
+
+Os custos de comercialização montam em 6% do VGV; os impostos em 6,73% (IRPJ,
+CSLL, PIS e COFINS para uma SPE).
+
+Assim, o total das despesas que devem ser descontadas do loteador montam em 
+17,62% do VGV.
+
+## Taxas
+
+Baseado na análise feita no item 9 (diagnóstico de mercado), não será
+considerada explicitamente uma taxa de valorização para os lotes durante o
+período de vendas. Mas, pode-se considerar, de maneira conservadora, que
+eventuais variações serão suficientes para cobrir as despesas com os impostos
+territoriais urbanos (IPTU) que incidirão sobre os lotes, de modo que este
+imposto também são será considerado explicitamente no fluxo de caixa.
+
+Na taxa de desconto do fluxo de caixa deve-se considerar o risco do 
+empreendimento. Para ajustar a taxa mínima de atratividade (TMA) usada como 
+taxa de desconto, foi usada a Equação 1.
+
+\begin{equation}
+\text{TMA}_{\text{ajust}} = [(1+i)(1+z)]-1
+\end{equation}
+
+Onde:
+
+  - $\text{TMA}_{\text{ajust}}$: é a taxa mínima de atratividade ajustada ao risco;
+  - $i$: é a taxa mínima de atratividade, sem risco;
+  - $z$: é o prêmio pelo risco (*spread*)
+  
+O valor do prêmio pelo risco ($z$) será tanto maior quanto maior for o risco
+envolvido no empreendimento.
+
+Como taxa sem risco ($i$) foi considerada a taxa SELIC vigente em agosto/2025.
+A taxa sem risco também é denominada de taxa básica. É necessário fazer-se o 
+ajuste da Equação 2 para expurgar a inflação desta taxa.
+
+\begin{equation}
+\text{TMA}_{\text{ajust. sem. infl.}} = \frac{1+\text{TMA}_{\text{ajust}}}{1+\text{infl.}}-1
+\end{equation}
+
+A taxa de inflação considerada foi o Índice de Preços ao Consumidor Amplo (IPCA),
+taxa oficial de medição da inflação brasileira, acumulada nos últimos 12 meses 
+até agosto de 2025, que totalizou 5,13%.
+
+Analisando-se as incertezas relacionadas à conjuntura econômica e a condição de
+risco do empreendimento em análise, considerou-se um prêmio de risco de 35% da 
+taxa básica adotada. 
+
+A Tabela 7 mostra as taxas consideradas e o resultado do cálculo da TMA ajustada
+ao risco, com expurgo da inflação.
+
+```{r}
+TMA <- (1+Ra)/(1+Infl) - 1
+tma <- (1+TMA)^(1/12) - 1
+TMAaj <- (1+Ra)*(1+Ra*P) - 1
+TMAajsinfl <- (1+TMAaj)/(1+Infl) - 1
+tmaajsinfl <- (1+TMAajsinfl)^(1/12) - 1
+```
+
+
+| DESCRIÇÃO                                     | TAXA                |
+|:---------------------------------------------:|--------------------:|
+| Taxa básica (a.a.)                            | `r pct(Ra)`         |
+| Taxa básica (a.m.)                            | `r pct(ra)`         |
+| IPCA (a.a.)                                   | `r pct(Infl)`       |
+| IPCA (a.m.)                                   | `r pct(infl)`       |
+| Taxa de desconto sem infl. e sem risco (a.a.) | `r pct(TMA)`        |
+| Taxa de desconto sem infl. e sem risco (a.m.) | `r pct(tma)`        |
+| Prêmio de risco (% da taxa básica)            | `r pct(P)`          |
+| Taxa com inflação, com risco (a.a.)           | `r pct(TMAaj)`      |
+| Taxa sem inflação, com risco (a.a.)           | `r pct(TMAajsinfl)` |
+| Taxa sem inflação, com risco (a.m.)           | `r pct(tmaajsinfl)` |
+Table: Taxas consideradas para o cálculo da TMA.
+
+
+Conforme apresentado na Tabela 7, a taxa mínima de atratividade ajustada ao 
+risco e expurgada da inflação é de `r pct(tmaajsinfl)` a.m.
+
+
+## Fluxo de Caixa
+
+```{r}
+Vbg <- 68029490.64
+Vg <- Vbg - Di
+```
+
+O fluxo de caixa (FC), elaborado conforme as premissas acima, é mostrado no 
+[ANEXO III]. O FC foi construído em moeda constante, valores de maio de 2024.
+
+A Tabela \ref{tab:RD} detalha as receitas e as despesas, período a período.
+
+A Tabela \ref{tab:FCL} apresenta o fluxo de caixa líquido do empreendimento.
+
+O Valor Presente Líquido (VPL) deste fluxo de caixa representa o valor do 
+terreno, antes do desconto de despesas iniciais utilizadas para a aquisição da
+gleba, projetos, demolições, e outros. O desembolso destas despesas ocorre, em 
+geral, antes do início da execução física do projeto. Estas despesas serão 
+apresentadas e comentadas na próxima seção.
+
+O Valor Presente Líquido (VPL) do fluxo de caixa do empreendimento, descontadas
+as despesas iniciais da Tabela 8, é de `r Reais(Vg)`.
+
+## Outras Despesas
+
+Algumas despesas iniciais também devem ser consideradas. Assim, foram
+consideradas como despesas de compra o pagamento de 2% sobre o valor do terreno,
+sendo este o valor do Imposto sobre Transmissão de Imóveis (ITBI), conforme o
+código tributário de Florianópolis/SC. Também existem despesas de legalização 
+(taxas cartoriais e outras) que incidem sobre o valor do terreno, da ordem de 1%. 
+Como ainda existem outras pequenas despesas, considerou-se uma taxa de 3% a ser
+aplicada sobre o VPL do empreendimento para despesas de compra, legalização e
+outras. Para as despesas do projeto, foi considerado 2% sobre os custos de
+urbanização.
+
+
+A Tabela 8 apresenta estes custos.
+
+| ITEM                           | TAXA  | REFERÊNCIA       | VALOR (R$)           |
+|:-------------------------------|------:|-----------------:|---------------------:|
+| Despesas na aquisição do lote  | 0%    | 0                | 0                    |
+| Projeto                        | 2%    | 239.680.869,90   | `r Reais(Dc/100*Cc)` |
+| Demolições                     | -     | -                | `r Reais(Cd)`        |
+| Total                          | -     | -                | `r Reais(Di)`        |
+Table: Despesas iniciais.
+
+
+
+
+# Enquadramento do Laudo
+
+Conforme recomendado em @NBR1465302, o presente trabalho enquadra-se como 
+**GRAU II DE FUNDAMENTAÇÃO**. Não há para o método involutivo classificação
+quanto ao grau de precisão. A Tabela \ref{tab:GF} mostra como o laudo se enquadra
+em cada item da @NBR1465302.
+
+
+```{r GF}
+df <- data.frame(
+  Item = c(1:9),
+  `Descrição` = c("Nível de detalhamento do projeto hipotético",
+                  "Preço de venda das unidades do projeto hipotético",
+                  "Estimativa dos custos de produção",
+                  "Prazos",
+                  "Taxas",
+                  "Modelo",
+                  "Análise setorial e diagnóstico de mercado",
+                  "Cenários",
+                  "Análises de sensibilidade do modelo"),
+  `Grau III` = c("Anteprojeto ou projeto básico", 
+                 "No mínimo Grau II de fundamentação no método comparativo",
+                 "Grau III de fundamentação no método da quantificação do custo",
+                 "Fundamentados com dados obtidos no mercado",
+                 "Fundamentadas com dados obtidos no mercado",
+                 "Dinâmico com fluxo de caixa",
+                 "De estrututura, conjunta, tendências e conduta",
+                 "Mínimo de 3",
+                 "Simulações com discussão do comportamento do modelo"),
+  `Grau II` = c("Estudo preliminar",
+                "Grau I de fundamentação no método comparativo",
+                "Grau II de fundamentação no método da quantificação do custo",
+                "Justificados",
+                "Justificadas",
+                "Dinâmico com equações pré-definidas",
+                "Da conjuntura",
+                "2",
+                "Simulações com identificação das variáveis mais significativas"),
+  `Grau I` = c("Aproveitamento, ocupação e usos presumidos",
+               "Estimativa",
+               "Grau I de fundamentação no método da quantificação do custo",
+               "Arbitrados",
+               "Arbitradas",
+               "Estático",
+               "Sintéticos da conjuntura",
+               "1",
+               "Sem simulação"),
+  Laudo = c("II", "III", "II", "II", "II", "III", "II", "III", "III")
+)
+kable(df,
+      caption = "Graus de fundamentação para o método involutivo. 
+      Fonte: adaptada de NBR 14.653-2", 
+      format = "latex", longtable = T, booktabs = T,
+      col.names = c("Item", "Descrição", "Grau III", "Grau II", "Grau I", "Laudo")) |>
+  kable_styling(latex_options = "repeat_header") |>
+  column_spec(2:5, width = "2.5cm")
+```
+
+A Tabela 10 mostra o enquadramento para obtenção do grau de fundamentação 
+atingido na presente avaliação.
+
+| Graus                                     | III                                          | II                   | I                           |
+|:------------------------------------------|:--------------------------------------------:|:--------------------:|:---------------------------:|
+| Pontos Mínimos                            | 22                                           |  13                  | 9                           |
+| Pontos Obtidos                            | 22                                           | -                    | -                           |
+| Itens Obrigatórios no grau correspondente | 2,6,7 e 8, com demais no mínimo no grau II   | 2,6,7 e 8 no grau II | Todos, no mínimo, no grau I |
+Table: Enquadramento do presente laudo.
+
+Dado que o item 7 não se enquadrou no grau III, apesar dos 22 pontos obtidos, 
+o laudo atingiu apenas o **grau II de fundamentação**.
+
+# Determinação do valor mais provável
+
+Considerando o atributo conferido a estes avaliadores de adotar qualquer valor
+dentro do campo de arbítrio para o valor do terreno -- ver [@NBR1465301, item
+3.8] e [@NBR1465302, item A.10.1.2], adotaremos como resultado final para o lote
+paradigma o valor resultante da tratamento inferencial estatístico e o cenário 
+realista para gleba, conforme preconizado em [@NBR1465302, item 8.2.1].
+
+Temos como valor de mercado mais provável do imóvel total (gleba), considerando
+o arredondamento admissível pela Norma [@NBR1465301, item 7.7.1, alínea a.], a
+quantia de  `r Reais(pretty(Vg, shrink = 0.1))[1]`.
+
+No [ANEXO V] podem ser vistos os resultados da Análise de Sensibilidade das
+variáveis utilizadas como *input* para o método involutivo. No [ANEXO VI] é 
+possível ver a prospeção de cenários realizada para o empreendimento.
+
+# Encerramento
+
+Admitimos como de boa fé e confiáveis as informações colhidas e documentações
+que nos foram fornecidas, aliadas a informações colhidas de terceiros creditados
+como idôneos, bem como as pesquisas realizadas e necessárias à formação de
+elementos de convicção que possibilitaram a conclusão do presente Laudo.
+
+Os engenheiros responsáveis técnicos signatários do presente laudo se colocam à
+disposição para quaisquer esclarecimentos que se fizerem necessários.
+
+O presente Laudo de Avaliação é composto por \pageref{LastPage} páginas,
+editadas, numeradas, impressas em uma única face e rubricadas, sendo a última
+assinada por seu responsável técnico e os seguintes ANEXOS:
+
+* [ANEXO I] -- Avaliação do Lote Paradigma do Empreendimento Hipotético;
+* [ANEXO II] -- Custos de Urbanização;
+* [ANEXO III] -- Receitas e Despesas do Empreendimento.
+* [ANEXO IV] -- Fluxo de Caixa Líquido do Empreendimento.
+* [ANEXO V] -- Análise de Sensibilidade
+* [ANEXO VI] -- Análise de Cenários
+
+Florianópolis, \thedate
+
+\vspace*{5\baselineskip}
+
+\textbf{Luiz Fernando Palin Droubi}\newline
+Engenheiro Civil CREA Nº 111318-0/D-SC\newline
+Mestre em Engenharia de Transportes e Gestão Territorial pela UFSC\newline
+Pós-graduado em Engenharia de Avaliações, Auditoria e Perícias de Engenharia pelo IPOG
+Engenheiro Civil pela Escola de Engenharia de São Carlos (EESC)
+
+\textbf{Lutemberg de Araujo Florencio}\newline
+Engenheiro Civil CREA Nº 111318-0/D-SC\newline
+Mestre em Engenharia de Transportes e Gestão Territorial pela UFSC\newline
+Pós-graduado em Engenharia de Avaliações, Auditoria e Perícias de Engenharia pelo IPOG
+Engenheiro Civil pela Escola de Engenharia de São Carlos (EESC)
+
+\newpage
+
+# ANEXO I {-}
+
+## Avaliação do Lote Paradigma do Empreendimento Hipotético {-}
+
+<!-- \includepdf[pages={-}]{Laudo_LOTE_PARADIGMA.pdf} -->
+
+# ANEXO II {-}
+
+## Custos de Urbanização {-}
+
+```{r pini}
+# stargazer(pini, header = FALSE, summary = FALSE,
+#           digit.separator = ".", decimal.mark = ",", 
+#           digit.separate = 3, digits = 2,
+#           title = "Custos de Urbanização (R\\$/1.000$m^2$ de área útil)*")
+pander(pini, 
+       decimal.mark = ",", big.mark = ".",
+       nsmall = 2, digits = 2,
+       justify = c('left', 'right', 'right', 'right', 'right'),
+       caption = "Custos de Urbanização (R\\$/1.000$m^2$ de área útil)*")
+```
+
+*Fonte: Editora PINI Publicação de Junho de 2025.  Custos de Urbanização 
+calculados com base no trabalho ``Avaliação de Glebas –- Subsídios para Pré-Planos''
+
+\newpage
+
+# ANEXO III {-}
+
+## Receitas e Despesas do Empreendimento Hipotético {-}
+
+\thispagestyle{empty}
+\newgeometry{top=5mm, bottom=5mm, left=10mm, right=10mm} 
+
+```{r}
+BDILot <- DILot + Dv + Tx # Sem Lucro (L), que está embutido na TMA
+```
+
+```{r}
+FluxoCaixa <- function(VUlote, CcUnitario) {
+  FC <- data.frame(
+  Periodo = 0:Ta,
+  V1 = c(rep(0, D0 + 1), rep(Vv, D1), n1-Vv*D1, rep(0, D2+D3+1)),
+  V2 = c(rep(0, D0 + 1 + D1), Vv - (n1-Vv*D1), rep(Vv, D2), 
+         n2 - Vv*D2 - (Vv - (n1-Vv*D1)), rep(0, D3)),
+  V3 = c(rep(0, D0 + D1 + D2 + 2), Vv - (n2 - Vv*D2 - (Vv - (n1-Vv*D1))), 
+         rep(Vv, D3-1), 1)
+  )
+  FC <- within(FC, {
+    R3 <- V3*VUlote*Alote
+    R2 <- V2*VUlote*Alote
+    R1 <- V1*VUlote*Alote
+  })
+  FC <- within(FC, {
+  Av3 <- c(rep(0, 33), 
+           c(.01, .02, .04, .06, .08, .12, .16, .20, .24, .30, .36, .42, .50, 
+             .58, .66, .72, .80, .85, .88, .90, .92, .94, .96, .98, .99,
+                         rep(1, 2)))
+  Av2 <- c(rep(0, 15), 
+           c(.01, .02, .04, .08, .12, .16, .20, .25, .30, 
+             .36, .42, .50, .60, .75, .85, .90, .95, 
+             rep(1, dim(FC)[1] - 32)))
+  Av1 <- c(0, .01, .02, .04, .08, .14, .20, .26,
+              .32, .40, .50, .60, .75, .85, 
+           rep(1, dim(FC)[1] - 14))
+
+  })
+  FC <- within(FC, {
+    D3 <- c(0, na.exclude(Av3 - lag(Av3)))*n3*Alote*CcUnitario
+    D2 <- c(0, na.exclude(Av2 - lag(Av2)))*n2*Alote*CcUnitario
+    D1 <- c(0, na.exclude(Av1 - lag(Av1)))*n1*Alote*CcUnitario
+  })
+  FC <- within(FC, {
+    DT <- D1 + D2 + D3
+    RT <- R1 + R2 + R3
+  })
+  FC <- within(FC, {
+    RTAcum <- cumsum(RT)
+    DTAcum <- cumsum(DT)
+  })
+  FC <- within(FC, {
+    Saldo <- RTAcum - DTAcum
+    SaldoAcum <- cumsum(Saldo)
+  })
+  FC <- within(FC, {
+    RL <- RT*(1-BDILot/100)
+    DL <- DT*(1+BDIUrb/100)
+    SL <- RL-DL
+  })
+  return(FC)
+}
+FC <- FluxoCaixa(VUlote = VUlote, CcUnitario = CcUnitario)
+```
+
+```{r RD}
+kable(FC[, c("R1", "R2", "R3", "D1", "D2", "D3", "RT", "DT", "RTAcum", "DTAcum",
+             "Saldo", "SaldoAcum")], 
+      format = "latex", longtable = T, booktabs = T,
+      caption = "Receitas e Despesas.",
+      digits = 0,
+      format.args = list(big.mark = ".", decimal.mark = ",")) |> 
+  kable_styling(latex_options = c("repeat_header"), font_size = 10) |>
+  landscape()
+```
+
+\restoregeometry
+
+# ANEXO IV {-}
+
+## Fluxo de Caixa do Empreendimento Hipotético {-}
+
+Com as receitas e despesas constantes da Tabela \ref{tab:RD}, foi calculado
+o Fluxo de Caixa Líquido do empreendimento, considerando-se para tanto um 
+desconto nas receitas brutas de `r pct(BDILot/100)`, referente ao BDI do Loteador, e
+um acréscimo nas Despesas Brutas de `r pct(BDIUrb/100)`, referente ao BDI do 
+Urbanizador. A Receita Líquida (RL) e a Despesa Líquida (DL) podem ser vistas
+na Tabela \ref{tab:FCL}, assim como o Saldo Líquido (SL) do caixa do 
+empreendimento.
+
+```{r FCL}
+kable(FC[, c("Periodo", "RL", "DL", "SL")], 
+      format = "latex", longtable = T, booktabs = T,
+      caption = "Fluxo de Caixa Líquido",
+      format.args = list(big.mark = ".", decimal.mark = ","))
+```
+
+## Valor Presente Líquido
+
+```{r}
+library(FinancialMath)
+VPL <- NPV(cf0 = -Di,
+           cf = FC$SL[-1],
+           times = FC$Periodo[-1],
+           i = tmaajsinfl)
+```
+
+
+Dado o Fluxo de Caixa Líquido da tabela \ref{tab:FCL}, com uma taxa de desconto
+de `r pct(tmaajsinfl)` a.m., descontando-se as despesas iniciais com projetos e
+demolições, `r Reais(Di)`, calcula-se um Valor Presente Líquido para o fluxo de
+caixa de `r Reais(VPL)`.
+
+# ANEXO V {-}
+
+## Análises de Sensibilidade {-}
+
+### Preço de Venda dos Lotes {-}
+
+Inicialmente será verificada a sensibilidade do modelo econômico-financeiro em
+relação à varição da variável *Preço de Venda dos Lotes*. Será adotado um 
+intervalo de variação de $\pm$ 15% em torno do valor estimado para os lotes, de
+`r Reais(VUlote*Alote)`. Assim, o Fluxo de Caixa do Empreendimento será refeito
+considerando-se o valor do lote entre `r Reais(.85*VUlote*Alote)` e 
+`r Reais(1.15*VUlote*Alote)`.
+
+```{r}
+# VULote = R$ 225,00/m2
+FC1 <- FluxoCaixa(VUlote = (1-10/100)*VUlote, 
+                  CcUnitario = CcUnitario)
+VPL1 <- NPV(cf0 = -Di, cf = FC1$SL[-1], times = FC1$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 233,35/m2
+FC2 <- FluxoCaixa(VUlote = (1-6.667/100)*VUlote, 
+                  CcUnitario = CcUnitario)
+VPL2 <- NPV(cf0 = -Di, cf = FC2$SL[-1], times = FC2$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 241,68/m2
+FC3 <- FluxoCaixa(VUlote = (1-3.334/100)*VUlote, 
+                  CcUnitario = CcUnitario)
+VPL3 <- NPV(cf0 = -Di, cf = FC3$SL[-1], times = FC3$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 258,33/m2
+FC4 <- FluxoCaixa(VUlote = (1+3.334/100)*VUlote, 
+                  CcUnitario = CcUnitario)
+VPL4 <- NPV(cf0 = -Di, cf = FC4$SL[-1], times = FC4$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 266,65/m2
+FC5 <- FluxoCaixa(VUlote = (1+6.667/100)*VUlote, 
+                  CcUnitario = CcUnitario)
+VPL5 <- NPV(cf0 = -Di, cf = FC5$SL[-1], times = FC5$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 275,00/m2
+FC6 <- FluxoCaixa(VUlote = (1+10/100)*VUlote, 
+                  CcUnitario = CcUnitario)
+VPL6 <- NPV(cf0 = -Di, cf = FC6$SL[-1], times = FC6$Periodo[-1],
+                          i = tmaajsinfl)
+```
+
+
+```{r SensLote, fig.cap="Análise de Sensibilidade. Valor do Lote."}
+library(tibble)
+df <- tribble(
+  ~Var,  ~VUlote                         ,~Vg,
+  -.10,     (1-10/100)*VUlote     ,VPL1,
+  -.06667,  (1-6.667/100)*VUlote  ,VPL2,
+  -.03334,  (1-3.334/100)*VUlote  ,VPL3,
+        0,  VUlote                ,VPL,
+   .03334,  1.03334*VUlote        ,VPL4,
+   .06667,  1.06667*VUlote        ,VPL5,
+   .10   ,  1.10*VUlote           ,VPL6
+)
+ggplot(df, aes(x = VUlote, y = Vg)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::label_currency(big.mark = ".", 
+                                                     decimal.mark = ",", 
+                                                     prefix = "R$ "),
+                     limits = c(30*10^6, 100*10^6)) +
+  scale_x_continuous(labels = scales::label_currency(big.mark = ".", 
+                                                     decimal.mark = ",",
+                                                     prefix = "R$ ")) +
+  labs(title = "Análise de Sensibilidade",
+       subtitle = "Em Relação ao VU de venda do Lote.",
+       caption = "Variação: +- 10%") + 
+  xlab("Valor Unitário (VU) do Lote (R$)") +
+  ylab("Valor da gleba (R$)") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+### Custos de Urbanização {-}
+
+A sensibilidade do modelo econômico-financeiro em relação à varição da variável 
+*Custos de Urbanização* será verificada. Será adotado um  intervalo de variação
+de $\pm$ 10% em torno do custo estimado, de `r Reais((n1+n2+n3)*Alote*90978.16/1000)`. 
+Como o Fluxo de Caixa do Empreendimento é dividido em três etapas de diferentes
+características, a variação do custo de urbanização será realizada aplicando-se
+uma variação ao custo de urbanização por 1.000 m2 de área útil previsto em cada
+etapa, ou seja, a estimativa será realizada alterando-se o valor previsto de
+`r Reais(90978.16)`/1.000m2 de área útil e, posteriormente, refazendo todo o 
+Fluxo de Caixa, para aferir a variação no Valor Presente Líquido decorrente 
+destas variações.
+
+```{r}
+# VULote = R$ 225,00/m2
+FC1 <- FluxoCaixa(VUlote = VUlote, 
+                  CcUnitario = (1-15/100)*CcUnitario)
+VPL1 <- NPV(cf0 = -Di, cf = FC1$SL[-1], times = FC1$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 233,35/m2
+FC2 <- FluxoCaixa(VUlote =VUlote, 
+                  CcUnitario =  (1-10/100)*CcUnitario)
+VPL2 <- NPV(cf0 = -Di, cf = FC2$SL[-1], times = FC2$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 241,68/m2
+FC3 <- FluxoCaixa(VUlote = VUlote, 
+                  CcUnitario = (1-5/100)*CcUnitario)
+VPL3 <- NPV(cf0 = -Di, cf = FC3$SL[-1], times = FC3$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 258,33/m2
+FC4 <- FluxoCaixa(VUlote = VUlote, 
+                  CcUnitario = (1+5/100)*CcUnitario)
+VPL4 <- NPV(cf0 = -Di, cf = FC4$SL[-1], times = FC4$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 266,65/m2
+FC5 <- FluxoCaixa(VUlote = VUlote, 
+                  CcUnitario = (1+10/100)*CcUnitario)
+VPL5 <- NPV(cf0 = -Di, cf = FC5$SL[-1], times = FC5$Periodo[-1],
+                          i = tmaajsinfl)
+# VULote = R$ 275,00/m2
+FC6 <- FluxoCaixa(VUlote = VUlote, 
+                  CcUnitario = (1+15/100)* CcUnitario)
+VPL6 <- NPV(cf0 = -Di, cf = FC6$SL[-1], times = FC6$Periodo[-1],
+                          i = tmaajsinfl)
+```
+
+```{r SensCUrb, fig.cap="Análise de Sensibilidade. Custos de Urbanização."}
+df <- tribble(
+  ~Var,  ~CUrb         , ~Vg,
+  -.15, 0.85*CcUnitario, VPL1,
+  -.10, 0.90*CcUnitario, VPL2,
+  -.05, 0.95*CcUnitario, VPL3,
+     0, 1.00*CcUnitario, VPL,
+   .05, 1.05*CcUnitario, VPL4,
+   .10, 1.10*CcUnitario, VPL5,
+   .15, 1.15*CcUnitario, VPL6
+)
+ggplot(df, aes(x = CUrb, y = Vg)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::label_currency(big.mark = ".", 
+                                                     decimal.mark = ",", 
+                                                     prefix = "R$ "),
+                     limits = c(30*10^6, 100*10^6)) +
+  scale_x_continuous(labels = scales::label_currency(big.mark = ".", 
+                                                     decimal.mark = ",",
+                                                     prefix = "R$ ")) +
+  labs(title = "Análise de Sensibilidade",
+       subtitle = "Em Relação aos Custos de Urbanização.",
+       caption = "+- 15%") + 
+  xlab("Custos de Urbanização (R$/1.000m2)") +
+  ylab("Valor da Gleba (R$)") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+### Taxa mínima de atratividade {-}
+
+Por fim, foi realizada a análise de sensibilidade da variável *taxa mínima de
+atratividade*, incluso o risco. Na prática, foi realizada a alteração do prêmio
+de risco, dentro do intervalo de 20% e 50%, o que, por sua vez levou a um
+intervalo de varição da taxa mínima de atratividade entre 
+
+```{r}
+# Taxa = 1,00% a.m.
+VPL1 <- NPV(cf0 = -Di, cf = FC$SL[-1], times = FC$Periodo[-1],
+                          i = 1/100)
+# Taxa = 1,09% a.m.
+VPL2 <- NPV(cf0 = -Di, cf = FC$SL[-1], times = FC$Periodo[-1],
+                          i = 1.09/100)
+# Taxa = 1,27% a.m.
+VPL3 <- NPV(cf0 = -Di, cf = FC$SL[-1], times = FC$Periodo[-1],
+                      i = 1.27/100)
+# Taxa = 1,36% a.m.
+VPL4 <- NPV(cf0 = -Di, cf = FC$SL[-1], times = FC$Periodo[-1],
+                          i = 1.36/100)
+```
+
+```{r SensTMA, fig.cap="Análise de Sensibilidade. TMA (%)."}
+library(tibble)
+df <- tribble(
+  ~Premio,   ~TMA   , ~Vg,
+  '20,00%', 1.00/100, VPL1,
+  '27,50%', 1.09/100, VPL2,
+  '35,00%', 1.18/100, VPL,
+  '42,50%', 1.27/100, VPL3,
+  '50,00%', 1.36/100, VPL4,
+)
+ggplot(df, aes(x = TMA, y = Vg)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::label_currency(big.mark = ".", 
+                                                     decimal.mark = ",", 
+                                                     prefix = "R$ "),
+                     limits = c(30*10^6, 100*10^6)) +
+  scale_x_continuous(labels = scales::label_percent(big.mark = ".",
+                                                    decimal.mark = ",",)) +
+  labs(title = "Análise de Sensibilidade",
+       subtitle = "Em Relação à TMA.",
+       caption = "+- 15% de Prêmio de Risco") + 
+  xlab("TMA (%)") +
+  ylab("Valor da Gleba (R$)") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+\newpage
+
+# ANEXO VI {-}
+
+## Cenários {-}
+
+O estudo de cenários também é recomendado pela @NBR1465302 quando se usa o 
+método involutivo.
+
+Comumente, analisam-se 3 cenários: um mais provável ou neutro, um cenário
+pessimista e um cenário otimista. Nestes cenários são consideradas variações
+simultâneas nas variáveis chaves do fluxo de caixa.
+
+O cenário mais provável é aquele já apresentado para determinar o valor
+da gleba.
+
+Para os cenários pessimista e otimista consideram-se variações simultâneas nas
+variáveis chaves, todas na mesma direção. Ou seja, uma combinação de variáveis 
+que diminuem o valor da gleba (cenário pessimista) ou aumentam o valor dela
+(cenário otimista).
+
+### Cenário mais provável {-}
+
+A Tabela 14 abaixo mostra os valores considerados no cenário mais provável.
+
+| Item                         | Variação | Valor                                   |
+|:-----------------------------|---------:|----------------------------------------:|
+| PU de Venda do Lote          |  0,0%    | `r Reais(VUlote)`$/m^2$                 |   
+| Custos de Urbanização        |  0,0%    | `r Reais(CcUnitario)`$/m^2 \text{a.u.}$ |
+| Adicional ao Prêmio de Risco |  0,0%    |   35%                                   | 
+Table: Cenário mais provável.
+
+### Cenário pessimista {-}
+
+Como a combinação de todos os eventos extremos é pouco provável, tomar-se-ão
+situações intermediárias. A Tabela 15 abaixo apresenta as variações consideradas
+no cenário pessimista.
+
+| Item                         | Variação   | Valor                                        |
+|:-----------------------------|-----------:|---------------------------------------------:|
+| PU de Venda do Lote          |  -0,05%    | `r Reais(.95*VUlote)`$/m^2$                  |   
+| Custos de Urbanização        |  +0,05%    | `r Reais(1.05*CcUnitario)`$/m^2 \text{a.u.}$ |
+| Adicional ao Prêmio de Risco |  +7,50 p.p.|  42,50%                                      | 
+Table: Cenário pessimista.
+
+
+### Cenário otimista {-}
+
+Também neste caso, a combinação de todos os eventos extremos é pouco provável.
+Tomar-se-ão, então, situações intermediárias. A Tabela 14 abaixo apresenta as
+variações consideradas no cenário pessimista.
+
+| Item                         | Variação   | Valor                                      |
+|:-----------------------------|-----------:|-------------------------------------------:|
+| Preço de Venda do Lote       | +5,00%     | `r brf(1.05*VUlote)`$/m^2$                 |
+| Custos de Urbanização        | -5,00%     | `r brf(0.95*CcUnitario)`$/m^2 \text{a.u.}$ |
+| Adicional ao Prêmio de Risco | -7,50 p.p. |   27,5%                                    |
+Table: Cenário otimista.
+
+## Resultados {-}
+
+```{r}
+# Cenário Pessimista
+FC1 <- FluxoCaixa(VUlote = .95*VUlote, 
+                  CcUnitario = (1+05/100)* CcUnitario)
+VPL1 <- NPV(cf0 = -Di, cf = FC1$SL[-1], times = FC1$Periodo[-1],
+                          i = 1.27/100)
+# Cenário Otimista
+FC2 <- FluxoCaixa(VUlote = 1.05*VUlote, 
+                  CcUnitario = .95* CcUnitario)
+VPL2 <- NPV(cf0 = -Di, cf = FC2$SL[-1], times = FC2$Periodo[-1],
+                          i = 1.09/100)
+```
+
+
+A Tabela 17 mostra os resultados para os 3 cenários simulados. A Figura
+\ref(fig:cenarios) ilustra com um gráfico o impacto no valor da gleba.
+
+| Cenário                      | Valor da Gleba       | Variação (%)                 |
+|:-----------------------------|---------------------:|-----------------------------:|
+| Pessimista                   | `r Reais(VPL1)`      | `r pct(VPL1/VPL-1)`          |
+| Provável                     |  `r Reais(VPL)`      | 0,0%                         |
+| Otimista                     | `r Reais(VPL2)`      | `r pct(VPL2/VPL-1)`          |
+Table: Cenário otimista.
+
+```{r cenarios, fig.cap="Valor da Gleba para diferentes cenários."}
+df <- tribble(
+  ~Cenario     ,   ~Vg,
+  "Pessimista" ,  VPL1,
+  "Provável"   ,   VPL,
+  "Otimista"   ,  VPL2
+)
+df$Cenario <- factor(df$Cenario, 
+                     levels = c("Pessimista", "Provável", "Otimista"), 
+                     ordered = T)
+ggplot(data = df, aes(x = Cenario, y = Vg)) +
+  geom_point() +
+  scale_y_continuous(labels = scales::label_currency(big.mark = ".", 
+                                                     decimal.mark = ",", 
+                                                     prefix = "R$ ")) +
+ # geom_label(aes(label = Vg)) +
+  labs(title = "Análise de Cenários",
+       subtitle = "Com as variáveis valor de venda, custos de urb. e prêmio de risco.",
+       caption = "+- 10% em cada variável.") + 
+  xlab("Cenário") +
+  ylab("Valor da gleba (R$)") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+# ANEXO VII {-}
+
+## Simulações de Monte Carlo com distribuição uniforme {-}
+
+Foram realizadas $n =$ `r Nsim` simulações de Monte Carlo considerando que as
+variáveis-chave VU do Lote Paradigma (VU), Custos de Construção (CC) e Taxa
+Mínima de Atratividade (TMA) variam em um determinado *range* de valores 
+**de maneira uniforme**. Os *ranges* de valores considerados foram:
+  - VU: de 90% a 110% do valor da estimativa central para o lote paradigma;
+  - CC: de 85% a 115% dos custos de urbanização descritos no [ANEXO II];
+  - TMA: de 85% a 115% da TMA utilizada para estimar o valor central da gleba (1,18%).
+  
+Para a simulação foi adotado que a correlação entre as variáveis segueria o 
+exposto na \@ref(tab:dependencia).
+  
+
+```{r rangesandvariables}
+ranges <- list(VU = range_VU, 
+               CC = range_CC, 
+               TMA = range_TMA)
+vars <- list(VU = VUlote, CC = CcUnitario, TMA = tmaajsinfl)
+```
+
+```{r}
+                              #  VU  Cc   TMA
+dependencia50 <- matrix(data = c(1,  .5, -.5, # VU
+                                .5,   1,  .5, # Cc
+                               -.5,  .5,   1),# TMA 
+                        nrow = 3, 
+                        byrow = TRUE, 
+                        dimnames = list(c("VU", "CC", "TMA"),
+                                        c("VU", "CC", "TMA"))
+                        )
+```
+
+```{r dependencia, tab.cap="Matriz de Covariancia -- variaveis 50\\% dependentes"}
+dependencia50 |> 
+  kable(booktabs = TRUE,
+        escape = TRUE)  |>
+  kable_styling(latex_options = "striped", 
+                bootstrap_options = "striped")
+```
+
+
+```{r}
+vpl_sim <- function(Nsim, ranges, variables, distribution = "uniform",
+                    params , dependencia = diag(length(ranges))){
+
+  n <- length(ranges)
+  mu <- rep(0, n)
+  if (is.null(names(dependencia))) {
+    dimnames(dependencia) <- list(names(ranges), names(ranges))
+  }
+  Sigma <- dependencia
+
+  rawvars <- MASS::mvrnorm(n = Nsim, mu = mu, Sigma = Sigma)
+  pvars <- as.data.frame(pnorm(rawvars))
+
+  if (distribution == "uniform"){
+    qvars <- list()
+    for (nam in names(ranges)){
+      qvars[[nam]] <- do.call("qunif",
+                              list(pvars[[nam]],
+                                   ranges[[nam]]["min"]*variables[[nam]],
+                                   ranges[[nam]]["max"]*variables[[nam]]))
+    }
+    qvars <- tibble::as_tibble(qvars)
+  } else if (distribution == "beta"){
+    qvars <- list()
+    for (nam in names(ranges)){
+      qvars[[nam]] <- do.call("qbeta",
+                              list(pvars[[nam]],
+                                   params[[nam]]["shape1"],
+                                   params[[nam]]["shape2"]))
+      qvars[[nam]] <-
+        (ranges[[nam]]["max"]*variables[[nam]] -
+           ranges[[nam]]["min"]*variables[[nam]])*qvars[[nam]] +
+        ranges[[nam]]["min"]*variables[[nam]]
+    }
+    qvars <- tibble::as_tibble(qvars)
+  }
+
+  qvars <-
+    qvars |>
+    dplyr::mutate(fcl = purrr::pmap(list(VUlote = VU, CcUnitario = CC), 
+                                    FluxoCaixa)
+                  )
+  VPL <- 
+    qvars |>
+    dplyr::mutate(vpl = purrr::map2(fcl, TMA, 
+                             function(df, TMA) NPV(cf0 = -Di, cf = df$SL[-1], 
+                                                 times = df$Periodo[-1],
+                                                 i = TMA)
+                     )
+    )
+  VPL
+}
+```
+
+
+```{r}
+set.seed(1)
+vpl_unif50 <- vpl_sim(Nsim, ranges = ranges, variables = vars,
+                  distribution = "uniform", 
+                  dependencia = dependencia50)
+VPL <- 
+  vpl_unif50 |> 
+  tidyr::unnest(cols = vpl)
+mean_unif50 <- mean(VPL$vpl)
+sd_unif50 <- sd(VPL$vpl)
+```
+
+
+Os resultados das simulações podem ser visualizados no histograma da 
+@\ref(fig:unifMC).
+
+```{r unifMC, fig.cap="Simulações de Monte Carlo com distribuição a priori uniforme."}
+# ggplot(VPL, aes(x = vpl/1000)) +
+#   geom_histogram()
+library(lattice)
+histogram(~vpl/1000, data = VPL)
+```
+
+## Simulações de Monte Carlo com distribuição beta {-}
+
+Nas simulações da seção anterior, a distribuição dos valores dentro do *range* 
+de valores pré-estabelecido para cada variável foi considerada uniforme, como
+antes esclarecido. No entanto, é razoável supor que há uma maior probabilidade
+de ocorrência dos valores centrais do que dos valores extremos dos intervalos
+de valores pré-estabelecidos. A distribuição beta é utilizada, em geral, para
+simular a maior probabilidade de ocorrência dos valores centrais, propiciando
+assim simulações mais realistas. Assim, foram elaboradas $n =$ `r Nsim` 
+simulações de Monte Carlo, considerando os mesmos *ranges* antes estabelecidos
+para as simulações com distribuição uniforme, porém agora com distribuição de
+probabilidade beta com parâmetros de forma ambos iguais a 7.
+
+```{r}
+set.seed(1)
+p_beta <- c(7, 7)
+names(p_beta) <- c("shape1", "shape2")
+parametros_beta7 <- list(VU = p_beta, CC = p_beta, TMA = p_beta)
+vpl_beta7_50 <- vpl_sim(Nsim, ranges = ranges, variables = vars,
+                      distribution = "beta", params = parametros_beta7,
+                      dependencia = dependencia50)
+VPL <- 
+  vpl_beta7_50 |> 
+  tidyr::unnest(cols = vpl)
+```
+
+Os resultados das simulações podem ser visualizados no histograma da
+\@ref(fig:betaMC).
+
+```{r betaMC, fig.cap="Simulações de Monte Carlo com distribuição a priori beta."}
+# ggplot(VPL, aes(x = vpl/1000)) +
+#   geom_histogram()
+histogram(~vpl/1000, data = VPL)
+```
+
+```{r}
+mean_beta7_50 <- mean(VPL$vpl)
+sd_beta7_50 <- sd(VPL$vpl)
+```
+
+```{r}
+a <- qnorm(.10, mean = mean_beta7_50/1000, sd = sd_beta7_50/1000) 
+b <- qnorm(.90, mean = mean_beta7_50/1000, sd = sd_beta7_50/1000)
+```
+
+
+Baseados nas $n =$ `r Nsim` simulações efetuadas, obteve-se um valor médio de
+$\overline{X} = \text{R\$ }$ `r brf(mean_beta7_50)`, com desvio-padrão
+igual a $s = \text{R\$ }$ `r brf(sd_beta7_50)`. Com estes parâmetros
+foi elaborada a Figura abaixo, em que mostra-se com a distribuição normal 
+teórica, 80% dos valores ficaram dentro do intervalo laranja, entre 
+`r Reais(1000*a)` e `r Reais(1000*b)`. Tais valores foram, após arredondamento,
+utilizados para formar o intervalo de valores admissíveis, apesar de não haver
+procedimento normatizado para este fim quando da utilização do Método Involutivo.
+
+```{r, fig.cap = "Distribuição Teórica com parâmetros estimados segundo simulações de Monte Carlo."}
+library(mosaic)
+plotDist("norm", 
+         mean = mean_beta7_50/1000, sd = sd_beta7_50/1000, 
+         type = "h",
+         groups= x > a & x < b)
+```
+
+
+# REFERÊNCIAS {-}

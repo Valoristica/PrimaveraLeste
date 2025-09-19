@@ -1,0 +1,2122 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.15)  18 SEP 2025 20:56
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Laudo_metodo_involutivo.tex
+(./Laudo_metodo_involutivo.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-07-14> (c:/texlive/2022/texmf-dist/tex/latex/base/ar
+ticle.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(c:/texlive/2022/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (c:/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (c:/texlive/2022/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
+) (c:/texlive/2022/texmf-dist/tex/latex/xcolor/x11nam.def
+File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
+)) (c:/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (c:/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(c:/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks17
+) (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen147
+)) (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen148
+) (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen149
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks19
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks20
+\eqnshift@=\dimen150
+\alignsep@=\dimen151
+\tagshift@=\dimen152
+\tagwidth@=\dimen153
+\totwidth@=\dimen154
+\lineht@=\dimen155
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (c:/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
+) (c:/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (c:/texlive/2022/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (c:/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (c:/texlive/2022/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
+(c:/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count274
+)
+\MT@toks=\toks25
+\MT@tempbox=\box53
+\MT@count=\count275
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
+LaTeX Info: Redefining \leftprotrusion on input line 1046.
+LaTeX Info: Redefining \rightprotrusion on input line 1056.
+LaTeX Info: Redefining \textls on input line 1234.
+\MT@outer@kern=\dimen156
+LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
+\MT@listname@count=\count276
+(c:/texlive/2022/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2022/06/23 v3.0f Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 900.
+LaTeX Info: Redefining \lslig on input line 900.
+\MT@outer@space=\skip52
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(c:/texlive/2022/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
+)) (c:/texlive/2022/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+(c:/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+(c:/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (c:/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))) (c:/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip53
+\LTright=\skip54
+\LTpre=\skip55
+\LTpost=\skip56
+\LTchunksize=\count277
+\LTcapwidth=\dimen157
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count278
+\LT@rows=\count279
+\c@LT@tables=\count280
+\c@LT@chunks=\count281
+\LT@p@ftn=\toks26
+) (c:/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen158
+\lightrulewidth=\dimen159
+\cmidrulewidth=\dimen160
+\belowrulesep=\dimen161
+\belowbottomsep=\dimen162
+\aboverulesep=\dimen163
+\abovetopsep=\dimen164
+\cmidrulesep=\dimen165
+\cmidrulekern=\dimen166
+\defaultaddspace=\dimen167
+\@cmidla=\count282
+\@cmidlb=\count283
+\@aboverulesep=\dimen168
+\@belowrulesep=\dimen169
+\@thisruleclass=\count284
+\@lastruleclass=\count285
+\@thisrulewidth=\dimen170
+) (c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen171
+\ar@mcellbox=\box59
+\extrarowheight=\dimen172
+\NC@list=\toks27
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box60
+) (c:/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count286
+\calc@Bcount=\count287
+\calc@Adimen=\dimen173
+\calc@Bdimen=\dimen174
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count288
+\calc@Cskip=\skip61
+) (c:/texlive/2022/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
+Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
+\FNH@notes=\box61
+\FNH@width=\dimen175
+\FNH@toks=\toks28
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen176
+\Gin@req@width=\dimen177
+)
+\pandoc@box=\box62
+\cslhangindent=\skip62
+\csllabelwidth=\skip63
+(c:/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/06/26 3.77 The Babel package
+\babel@savecnt=\count289
+\U@D=\dimen178
+\l@unhyphenated=\language87
+(c:/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count290
+(c:/texlive/2022/texmf-dist/tex/generic/babel-portuges/brazil.ldf
+Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
+Package babel Info: Hyphen rules for 'brazil' set to \l@portuguese
+(babel)             (\language70). Reported on input line 111.
+Package babel Info: Making " an active character on input line 143.
+)) (c:/texlive/2022/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip64
+\thanksmargin=\skip65
+\droptitle=\skip66
+) (c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/05/22 v0.5v Insert pages of external PDF documents (AM)
+(c:/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (c:/texlive/2022/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen179
+\ESO@tempdimb=\dimen180
+)
+\AM@pagewidth=\dimen181
+\AM@pageheight=\dimen182
+\AM@fboxrule=\dimen183
+(c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/05/22 v0.5v Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count291
+\AM@pagebox=\box63
+\AM@global@opts=\toks29
+\AM@pagecnt=\count292
+\AM@toc@title=\toks30
+\c@AM@survey=\count293
+\AM@templatesizebox=\box64
+) (c:/texlive/2022/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+(c:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+(c:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen184
+\captionmargin=\dimen185
+\caption@leftmargin=\dimen186
+\caption@rightmargin=\dimen187
+\caption@width=\dimen188
+\caption@indent=\dimen189
+\caption@parindent=\dimen190
+\caption@hangindent=\dimen191
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count294
+\c@continuedfloat=\count295
+Package caption Info: longtable package is loaded.
+(c:/texlive/2022/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+\c@KVtest=\count296
+\sf@farskip=\skip67
+\sf@captopadj=\dimen192
+\sf@capskip=\skip68
+\sf@nearskip=\skip69
+\c@subfigure=\count297
+\c@subfigure@save=\count298
+\c@lofdepth=\count299
+\c@subtable=\count300
+\c@subtable@save=\count301
+\c@lotdepth=\count302
+\sf@top=\skip70
+\sf@bottom=\skip71
+) (c:/texlive/2022/texmf-dist/tex/latex/breqn/breqn.sty (c:/texlive/2022/texmf-
+dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-07-14 L3 programming layer (loader) 
+(c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count303
+\l__pdf_internal_box=\box65
+))
+Package: breqn 2021/10/28 v0.98l Breaking equations
+(c:/texlive/2022/texmf-dist/tex/latex/breqn/flexisym.sty
+Package: flexisym 2021/10/28 v0.98l Make math characters macros
+LaTeX Info: Redefining \textprime on input line 299.
+LaTeX Info: Redefining \not on input line 357.
+(c:/texlive/2022/texmf-dist/tex/latex/breqn/cmbase.sym
+File: cmbase.sym 2007/12/19 v0.92
+LaTeX Info: Redefining \hbar on input line 324.
+LaTeX Info: Redefining \surd on input line 326.
+LaTeX Info: Redefining \angle on input line 334.
+LaTeX Info: Redefining \neq on input line 335.
+LaTeX Info: Redefining \mapsto on input line 336.
+LaTeX Info: Redefining \cong on input line 337.
+LaTeX Info: Redefining \notin on input line 340.
+LaTeX Info: Redefining \rightleftharpoons on input line 341.
+LaTeX Info: Redefining \doteq on input line 342.
+LaTeX Info: Redefining \hookrightarrow on input line 343.
+LaTeX Info: Redefining \hookleftarrow on input line 344.
+LaTeX Info: Redefining \bowtie on input line 345.
+LaTeX Info: Redefining \models on input line 346.
+LaTeX Info: Redefining \Longrightarrow on input line 347.
+LaTeX Info: Redefining \longrightarrow on input line 348.
+LaTeX Info: Redefining \Longleftarrow on input line 349.
+LaTeX Info: Redefining \longleftarrow on input line 350.
+LaTeX Info: Redefining \longmapsto on input line 351.
+LaTeX Info: Redefining \longleftrightarrow on input line 352.
+LaTeX Info: Redefining \Longleftrightarrow on input line 353.
+LaTeX Info: Redefining \cdots on input line 357.
+LaTeX Info: Redefining \vdots on input line 360.
+LaTeX Info: Redefining \ddots on input line 365.
+) (c:/texlive/2022/texmf-dist/tex/latex/breqn/mathstyle.sty
+Package: mathstyle 2021/10/28 v0.98l Tracking mathstyle implicitly
+LaTeX Info: Redefining \displaystyle on input line 95.
+LaTeX Info: Redefining \textstyle on input line 97.
+LaTeX Info: Redefining \scriptstyle on input line 99.
+LaTeX Info: Redefining \scriptscriptstyle on input line 101.
+LaTeX Info: Redefining \genfrac on input line 149.
+))
+\inf@bad=\count304
+\maxint=\count305
+\listwidth=\dimen193
+\eqnumsep=\dimen194
+\eqmargin=\dimen195
+\eqlinespacing=\skip72
+\eqlineskip=\skip73
+\eqlineskiplimit=\dimen196
+\eqbinoffset=\muskip17
+\eqdelimoffset=\muskip18
+\eqindentstep=\dimen197
+\eqstyle=\toks31
+\eqbreakdepth=\count306
+\eqinterlinepenalty=\count307
+\intereqpenalty=\count308
+\intereqskip=\skip74
+\prerelpenalty=\count309
+\prebinoppenalty=\count310
+\Dmedmuskip=\muskip19
+\Dthickmuskip=\muskip20
+\eqleftskip=\skip75
+\eqrightskip=\skip76
+\eq@vspan=\skip77
+\eq@binoffset=\muskip21
+\EQ@box=\box66
+\EQ@copy=\box67
+\EQ@numbox=\box68
+\eq@wdNum=\dimen198
+\GRP@numbox=\box69
+\grp@wdNum=\dimen199
+\eq@lines=\count311
+\eq@curline=\count312
+\eq@badness=\count313
+\EQ@vims=\count314
+\eq@dp=\dimen256
+\eq@wdL=\dimen257
+\eq@wdT=\dimen258
+\eq@wdMin=\dimen259
+\grp@wdL=\dimen260
+\grp@wdR=\dimen261
+\grp@wdT=\dimen262
+\eq@wdRmax=\dimen263
+\eq@firstht=\dimen264
+\eq@wdCond=\dimen265
+\eq@indentstep=\dimen266
+\eq@linewidth=\dimen267
+\grp@linewidth=\dimen268
+\eq@hshift=\dimen269
+\eq@given@sidespace=\dimen270
+\mathindent=\dimen271
+\eq@final@linecount=\count315
+\eq@wdR=\dimen272
+\EQ@continue=\toks32
+\lr@level=\count316
+\GRP@queue=\toks33
+\GRP@box=\box70
+\GRP@wholebox=\box71
+\darraycolsep=\skip78
+\cur@row=\count317
+\cur@col=\count318
+\conditionsep=\skip79
+) (c:/texlive/2022/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
+) (c:/texlive/2022/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
+(c:/texlive/2022/texmf-dist/tex/latex/nextpage/nextpage.sty
+Package: nextpage 2009/09/03 v1.1a additional page commands
+)
+\beforeepigraphskip=\skip80
+\afterepigraphskip=\skip81
+\epigraphwidth=\skip82
+\epigraphrule=\skip83
+) (c:/texlive/2022/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+\c@dirtytalk@qdepth=\count319
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+) (c:/texlive/2022/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (c:/texlive/2022/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (c:/texlive/2022/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty
+Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2022-06-22 LaTeX2e option processing using LaTeX3 keys
+) (c:/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-06-22 L3 Experimental document command parser
+)
+(c:/texlive/2022/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic-helper.
+sty
+Package: fontawesome5-generic-helper 2022/05/02 v5.15.4 non-uTeX helper for fon
+tawesome5
+(c:/texlive/2022/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def))) 
+(c:/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip84
+\f@nch@O@elh=\skip85
+\f@nch@O@erh=\skip86
+\f@nch@O@olh=\skip87
+\f@nch@O@orh=\skip88
+\f@nch@O@elf=\skip89
+\f@nch@O@erf=\skip90
+\f@nch@O@olf=\skip91
+\f@nch@O@orf=\skip92
+)
+
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 143.
+
+
+Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 146.
+
+(c:/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip93
+\multirow@cntb=\count320
+\multirow@dima=\skip94
+\bigstrutjot=\dimen273
+) (c:/texlive/2022/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen274
+\WF@size=\dimen275
+\c@WF@wrappedlines=\count321
+\WF@box=\box72
+\WF@everypar=\toks34
+Package: wrapfig 2003/01/31  v 3.6
+) (c:/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count322
+\float@exts=\toks35
+\float@box=\box73
+\@float@everytoks=\toks36
+\@floatcapt=\box74
+) (c:/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks37
+\minrowclearance=\skip95
+) (c:/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (c:/texlive/2022/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(c:/texlive/2022/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box75
+\sift@deathcycles=\count323
+\@vwid@loff=\dimen276
+\@vwid@roff=\dimen277
+)
+\c@taburow=\count324
+\tabu@nbcols=\count325
+\tabu@cnt=\count326
+\tabu@Xcol=\count327
+\tabu@alloc=\count328
+\tabu@nested=\count329
+\tabu@target=\dimen278
+\tabu@spreadtarget=\dimen279
+\tabu@naturalX=\dimen280
+\tabucolX=\dimen281
+\tabu@Xsum=\dimen282
+\extrarowdepth=\dimen283
+\abovetabulinesep=\dimen284
+\belowtabulinesep=\dimen285
+\tabustrutrule=\dimen286
+\tabu@thebody=\toks38
+\tabu@footnotes=\toks39
+\tabu@box=\box76
+\tabu@arstrutbox=\box77
+\tabu@hleads=\box78
+\tabu@vleads=\box79
+\tabu@cellskip=\skip96
+) (c:/texlive/2022/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box80
+) (c:/texlive/2022/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(c:/texlive/2022/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(c:/texlive/2022/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip97
+) (c:/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box81
+\UL@hyphenbox=\box82
+\UL@skip=\skip98
+\UL@hook=\toks40
+\UL@height=\dimen287
+\UL@pe=\count330
+\UL@pixel=\dimen288
+\ULC@box=\box83
+Package: ulem 2019/11/18
+\ULdepth=\dimen289
+) (c:/texlive/2022/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen290
+\c@nlinenum=\count331
+\TeXr@lab=\toks41
+) (c:/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+(c:/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+(c:/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (c:/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (c:/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (c:/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (c:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+(c:/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count332
+)
+\@linkdim=\dimen291
+\Hy@linkcounter=\count333
+\Hy@pagecounter=\count334
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (c:/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count335
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4045.
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4408.
+\c@Hy@tempcnt=\count336
+(c:/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip22
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4746.
+\XeTeXLinkMargin=\dimen292
+(c:/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(c:/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count337
+\Field@Width=\dimen293
+\Fld@charsize=\dimen294
+Package hyperref Info: Hyper figures OFF on input line 6024.
+Package hyperref Info: Link nesting OFF on input line 6029.
+Package hyperref Info: Hyper index ON on input line 6032.
+Package hyperref Info: backreferencing OFF on input line 6039.
+Package hyperref Info: Link coloring OFF on input line 6044.
+Package hyperref Info: Link coloring with OCG OFF on input line 6049.
+Package hyperref Info: PDF/A mode OFF on input line 6054.
+(c:/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count338
+\c@Item=\count339
+\c@Hfootnote=\count340
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+(c:/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count341
+\c@bookmark@seq@number=\count342
+(c:/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(c:/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip99
+) (c:/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count343
+)) (c:/texlive/2022/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 173.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 18
+7.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./Laudo_metodo_involutivo.aux)
+\openout1 = `Laudo_metodo_involutivo.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+(c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count344
+\scratchdimen=\dimen295
+\scratchbox=\box84
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen296
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks43
+) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+(c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=683.14136pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-43.81725pt
+* \headheight=50.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \microtypecontext on input line 187.
+Package microtype Info: Applying patch `item' on input line 187.
+Package microtype Info: Applying patch `toc' on input line 187.
+Package microtype Info: Applying patch `eqnum' on input line 187.
+Package microtype Info: Applying patch `footnote' on input line 187.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 187.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(c:/texlive/2022/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 187.
+Package hyperref Info: Link coloring ON on input line 187.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+89.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+89.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+189.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+189.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 189.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 189.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 189.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 189
+.
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (c:/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 189
+.
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (c:/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+89.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./Laudo_metodo_involutivo.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 4.
+<logo.png, id=25, 502.0356pt x 502.0356pt>
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 25.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[1{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+ <./logo.png>])
+\tf@toc=\write3
+\openout3 = `Laudo_metodo_involutivo.toc'.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 197.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[2]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 247.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[3]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 300.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 306.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[4]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 353.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[5]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 405.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[6]
+<images/Perimetro-1.png, id=176, 469.755pt x 469.755pt>
+File: images/Perimetro-1.png Graphic file (type png)
+<use images/Perimetro-1.png>
+Package pdftex.def Info: images/Perimetro-1.png  used on input line 450.
+(pdftex.def)             Requested size: 409.71692pt x 409.71573pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 456.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[7]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 480.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[8 <./images/Perimetro-1.png>]
+<./refs/Fotos/39.jpeg, id=206, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/39.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/39.jpeg>
+Package pdftex.def Info: ./refs/Fotos/39.jpeg  used on input line 499.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/37.jpeg, id=207, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/37.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/37.jpeg>
+Package pdftex.def Info: ./refs/Fotos/37.jpeg  used on input line 499.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/34.jpeg, id=208, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/34.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/34.jpeg>
+Package pdftex.def Info: ./refs/Fotos/34.jpeg  used on input line 508.
+(pdftex.def)             Requested size: 318.66948pt x 239.00267pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 514.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[9 <./refs/Fotos/39.jpeg> <./refs/Fotos/37.jpeg>]
+<./refs/Fotos/35.jpeg, id=220, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/35.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/35.jpeg>
+Package pdftex.def Info: ./refs/Fotos/35.jpeg  used on input line 517.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/36.jpeg, id=221, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/36.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/36.jpeg>
+Package pdftex.def Info: ./refs/Fotos/36.jpeg  used on input line 517.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/30.jpeg, id=222, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/30.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/30.jpeg>
+Package pdftex.def Info: ./refs/Fotos/30.jpeg  used on input line 526.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/29.jpeg, id=223, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/29.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/29.jpeg>
+Package pdftex.def Info: ./refs/Fotos/29.jpeg  used on input line 526.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/27.jpeg, id=224, 1204.5pt x 1606.0pt>
+File: ./refs/Fotos/27.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/27.jpeg>
+Package pdftex.def Info: ./refs/Fotos/27.jpeg  used on input line 535.
+(pdftex.def)             Requested size: 223.07211pt x 297.42392pt.
+<./refs/Fotos/25.jpeg, id=225, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/25.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/25.jpeg>
+Package pdftex.def Info: ./refs/Fotos/25.jpeg  used on input line 535.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 541.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[10 <./refs/Fotos/34.jpeg> <./refs/Fotos/35.jpeg> <./refs/Fotos/36.jpeg> <./ref
+s/Fotos/30.jpeg> <./refs/Fotos/29.jpeg>]
+<./refs/Fotos/24.jpeg, id=231, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/24.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/24.jpeg>
+Package pdftex.def Info: ./refs/Fotos/24.jpeg  used on input line 544.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+<./refs/Fotos/26.jpeg, id=232, 1606.0pt x 1204.5pt>
+File: ./refs/Fotos/26.jpeg Graphic file (type jpg)
+<use ./refs/Fotos/26.jpeg>
+Package pdftex.def Info: ./refs/Fotos/26.jpeg  used on input line 544.
+(pdftex.def)             Requested size: 223.07211pt x 167.28717pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 566.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[11 <./refs/Fotos/27.jpeg> <./refs/Fotos/25.jpeg> <./refs/Fotos/24.jpeg> <./ref
+s/Fotos/26.jpeg>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 652.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[12]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 713.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[13]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 815.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[14]
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 8
+42.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+<images/PH-1.png, id=279, 469.755pt x 469.755pt>
+File: images/PH-1.png Graphic file (type png)
+<use images/PH-1.png>
+Package pdftex.def Info: images/PH-1.png  used on input line 890.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 895.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[15]
+<images/Etapa1-1.png, id=291, 469.755pt x 469.755pt>
+File: images/Etapa1-1.png Graphic file (type png)
+<use images/Etapa1-1.png>
+Package pdftex.def Info: images/Etapa1-1.png  used on input line 919.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 925.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[16 <./images/PH-1.png>]
+<images/Etapas2-3-1.png, id=309, 469.755pt x 469.755pt>
+File: images/Etapas2-3-1.png Graphic file (type png)
+<use images/Etapas2-3-1.png>
+Package pdftex.def Info: images/Etapas2-3-1.png  used on input line 928.
+(pdftex.def)             Requested size: 223.07211pt x 223.07143pt.
+<images/Etapas2-3-2.png, id=310, 469.755pt x 469.755pt>
+File: images/Etapas2-3-2.png Graphic file (type png)
+<use images/Etapas2-3-2.png>
+Package pdftex.def Info: images/Etapas2-3-2.png  used on input line 928.
+(pdftex.def)             Requested size: 223.07211pt x 223.07143pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 941.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[17 <./images/Etapa1-1.png> <./images/Etapas2-3-1.png> <./images/Etapas2-3-2.pn
+g>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1045.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[18]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1138.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[19]
+<ANBIMA.png, id=356, 549.85425pt x 361.35pt>
+File: ANBIMA.png Graphic file (type png)
+<use ANBIMA.png>
+Package pdftex.def Info: ANBIMA.png  used on input line 1190.
+(pdftex.def)             Requested size: 318.66948pt x 209.42325pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1196.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[20]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1238.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[21 <./ANBIMA.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1321.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[22]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1348.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[23]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1421.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[24]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1472.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[25]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=423, 597.55246pt x 845.0772
+4pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf  used o
+n input line 1482.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf  used o
+n input line 1482.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=426, page=1, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 1>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 1>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1482.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[26]
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 1>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 1>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 1>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[27 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=470, page=2, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 2>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page2
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 2>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page2
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 2>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page2
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[28 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=483, page=3, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 3>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page3
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 3>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page3
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 3>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page3
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[29 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=520, page=4, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 4>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page4
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 4>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page4
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 4>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page4
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[30 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=525, page=5, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 5>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page5
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 5>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page5
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 5>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page5
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[31 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=533, page=6, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 6>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page6
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 6>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page6
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 6>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page6
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[32 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=538, page=7, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 7>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page7
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 7>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page7
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 7>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page7
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[33 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=543, page=8, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 8>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page8
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 8>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page8
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 8>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page8
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[34 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=558, page=9, 597.55246pt x 
+845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 9>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page9
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 9>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page9
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 9>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page9
+ used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[35 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=563, page=10, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 10>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+0 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 10>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+0 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 10>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+0 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[36 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=568, page=11, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 11>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+1 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 11>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+1 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 11>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+1 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[37 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=574, page=12, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 12>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+2 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 12>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+2 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 12>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+2 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[38 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=587, page=13, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 13>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+3 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 13>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+3 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 13>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+3 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[39 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=592, page=14, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 14>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+4 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 14>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+4 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 14>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+4 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[40 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=597, page=15, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 15>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+5 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 15>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+5 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 15>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+5 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[41 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=602, page=16, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 16>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+6 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 16>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+6 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 16>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+6 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[42 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=609, page=17, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 17>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+7 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 17>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+7 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 17>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+7 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[43 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=617, page=18, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 18>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+8 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 18>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+8 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 18>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+8 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[44 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=622, page=19, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 19>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+9 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 19>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+9 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 19>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page1
+9 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[45 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Laudo de avaliação - Lote paradigma (VF)
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<Laudo de avaliação - Lote paradigma (VF).pdf, id=627, page=20, 597.55246pt x
+ 845.07724pt>
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 20>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page2
+0 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 20>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page2
+0 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: Laudo de avaliação - Lote paradigma (VF).pdf Graphic file (type pdf)
+<use Laudo de avaliação - Lote paradigma (VF).pdf, page 20>
+Package pdftex.def Info: Laudo de avaliação - Lote paradigma (VF).pdf , page2
+0 used on input line 1482.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[46 <./Laudo de avaliação - Lote paradigma (VF).pdf>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1547.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[47]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1557.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[48]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* v-part:(T,H,B)=(14.22636pt, 816.59412pt, 14.22636pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=540.60239pt
+* \textheight=816.59412pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-133.04362pt
+* \headheight=50.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[49
+
+
+]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1652.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[50]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1749.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[51
+
+
+]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1760.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[52]
+<images/SensLote-1.png, id=666, 469.755pt x 469.755pt>
+File: images/SensLote-1.png Graphic file (type png)
+<use images/SensLote-1.png>
+Package pdftex.def Info: images/SensLote-1.png  used on input line 1782.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+<images/SensCUrb-1.png, id=667, 469.755pt x 469.755pt>
+File: images/SensCUrb-1.png Graphic file (type png)
+<use images/SensCUrb-1.png>
+Package pdftex.def Info: images/SensCUrb-1.png  used on input line 1807.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1813.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[53 <./images/SensLote-1.png>]
+<images/SensTMA-1.png, id=681, 469.755pt x 469.755pt>
+File: images/SensTMA-1.png Graphic file (type png)
+<use images/SensTMA-1.png>
+Package pdftex.def Info: images/SensTMA-1.png  used on input line 1826.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1832.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[54 <./images/SensCUrb-1.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1833.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[55 <./images/SensTMA-1.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1972.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[56]
+<images/Cenarios-1.png, id=720, 469.755pt x 469.755pt>
+File: images/Cenarios-1.png Graphic file (type png)
+<use images/Cenarios-1.png>
+Package pdftex.def Info: images/Cenarios-1.png  used on input line 2014.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2021.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[57 <./images/cenarios-1.png>]
+<images/unifMC-1.png, id=736, 469.755pt x 469.755pt>
+File: images/unifMC-1.png Graphic file (type png)
+<use images/unifMC-1.png>
+Package pdftex.def Info: images/unifMC-1.png  used on input line 2069.
+(pdftex.def)             Requested size: 273.14923pt x 273.14621pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2084.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[58 <./images/unifMC-1.png>]
+<images/betaMC-1.png, id=750, 469.755pt x 469.755pt>
+File: images/betaMC-1.png Graphic file (type png)
+<use images/betaMC-1.png>
+Package pdftex.def Info: images/betaMC-1.png  used on input line 2108.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2126.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[59 <./images/betaMC-1.png>]
+<images/unnamed-chunk-22-1.png, id=762, 469.755pt x 469.755pt>
+File: images/unnamed-chunk-22-1.png Graphic file (type png)
+<use images/unnamed-chunk-22-1.png>
+Package pdftex.def Info: images/unnamed-chunk-22-1.png  used on input line 2129
+.
+(pdftex.def)             Requested size: 318.66948pt x 318.66939pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2142.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[60 <./images/unnamed-chunk-22-1.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2147.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[61]
+
+pdfTeX warning: pdflatex.exe (file ./Macrozona Urbana-R00-A1.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<Macrozona Urbana-R00-A1.pdf, id=780, 2392.94pt x 1690.315pt>
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf  used on input line 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Macrozona Urbana-R00-A1.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf  used on input line 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Macrozona Urbana-R00-A1.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./Macrozona Urbana-R00-A1.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<Macrozona Urbana-R00-A1.pdf, id=783, page=1, 2392.94pt x 1690.315pt>
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf, page 1>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf , page1 used on input line
+ 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf, page 1>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf , page1 used on input line
+ 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf, page 1>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf , page1 used on input line
+ 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf, page 1>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf , page1 used on input line
+ 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+File: Macrozona Urbana-R00-A1.pdf Graphic file (type pdf)
+<use Macrozona Urbana-R00-A1.pdf, page 1>
+Package pdftex.def Info: Macrozona Urbana-R00-A1.pdf , page1 used on input line
+ 2149.
+(pdftex.def)             Requested size: 2392.93419pt x 1690.31088pt.
+[62
+
+ <./Macrozona Urbana-R00-A1.pdf>]
+<./refs/MAT 45556_ANTONIO VARGAS.pdf, id=841, 597.53236pt x 845.05714pt>
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf  used on input lin
+e 2160.
+(pdftex.def)             Requested size: 597.5309pt x 845.05507pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf  used on input lin
+e 2160.
+(pdftex.def)             Requested size: 597.5309pt x 845.05507pt.
+<./refs/MAT 45556_ANTONIO VARGAS.pdf, id=844, page=1, 597.53236pt x 845.05714pt
+>
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page1 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.5309pt x 845.05507pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page1 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2160.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[63
+
+]
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page1 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page1 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page1 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+[64 <./refs/MAT 45556_ANTONIO VARGAS.pdf>]
+<./refs/MAT 45556_ANTONIO VARGAS.pdf, id=857, page=2, 597.53236pt x 845.05714pt
+>
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 2>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page2 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 2>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page2 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 2>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page2 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+[65 <./refs/MAT 45556_ANTONIO VARGAS.pdf>]
+<./refs/MAT 45556_ANTONIO VARGAS.pdf, id=864, page=3, 597.53236pt x 845.05714pt
+>
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 3>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page3 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 3>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page3 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+File: ./refs/MAT 45556_ANTONIO VARGAS.pdf Graphic file (type pdf)
+<use ./refs/MAT 45556_ANTONIO VARGAS.pdf, page 3>
+Package pdftex.def Info: ./refs/MAT 45556_ANTONIO VARGAS.pdf , page3 used on in
+put line 2160.
+(pdftex.def)             Requested size: 597.55824pt x 845.09375pt.
+[66 <./refs/MAT 45556_ANTONIO VARGAS.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, id=875, 597.23125pt x 845.1575pt>
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf  used on inp
+ut line 2162.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf  used on inp
+ut line 2162.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, id=878, page=1, 597.23125pt x 845.1
+575pt>
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page1 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page1 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page1 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page1 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 1>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page1 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[67 <./refs/MAT 34497_ELIZABETE MASCARELLO.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, id=887, page=2, 597.23125pt x 845.1
+575pt>
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 2>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page2 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 2>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page2 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf Graphic file (type pdf)
+<use ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf, page 2>
+Package pdftex.def Info: ./refs/MAT 34497_ELIZABETE MASCARELLO.pdf , page2 used
+ on input line 2162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[68 <./refs/MAT 34497_ELIZABETE MASCARELLO.pdf>]
+<./refs/CCIR_ANTONIO.pdf, id=896, 597.23125pt x 845.1575pt>
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf  used on input line 2164.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf  used on input line 2164.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<./refs/CCIR_ANTONIO.pdf, id=899, page=1, 597.23125pt x 845.1575pt>
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page1 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page1 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page1 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page1 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page1 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[69 <./refs/CCIR_ANTONIO.pdf>]
+<./refs/CCIR_ANTONIO.pdf, id=918, page=2, 597.23125pt x 845.1575pt>
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 2>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page2 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 2>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page2 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 2>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page2 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[70 <./refs/CCIR_ANTONIO.pdf>]
+<./refs/CCIR_ANTONIO.pdf, id=941, page=3, 597.23125pt x 853.1875pt>
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 3>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page3 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 853.22447pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 3>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page3 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 853.22447pt.
+File: ./refs/CCIR_ANTONIO.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ANTONIO.pdf, page 3>
+Package pdftex.def Info: ./refs/CCIR_ANTONIO.pdf , page3 used on input line 216
+4.
+(pdftex.def)             Requested size: 597.25711pt x 853.22447pt.
+[71 <./refs/CCIR_ANTONIO.pdf>]
+<./refs/CCIR_ELIZABETE.pdf, id=964, 597.23125pt x 845.1575pt>
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf  used on input line 2166.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf  used on input line 2166.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<./refs/CCIR_ELIZABETE.pdf, id=967, page=1, 597.23125pt x 845.1575pt>
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page1 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page1 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page1 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page1 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 1>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page1 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[72 <./refs/CCIR_ELIZABETE.pdf>]
+<./refs/CCIR_ELIZABETE.pdf, id=986, page=2, 597.23125pt x 845.1575pt>
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 2>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page2 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 2>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page2 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: ./refs/CCIR_ELIZABETE.pdf Graphic file (type pdf)
+<use ./refs/CCIR_ELIZABETE.pdf, page 2>
+Package pdftex.def Info: ./refs/CCIR_ELIZABETE.pdf , page2 used on input line 2
+166.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[73 <./refs/CCIR_ELIZABETE.pdf>] 
+AED: lastpage setting LastPage
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2184.
+(pdftex.def)             Requested size: 42.67628pt x 31.29288pt.
+[74] (./Laudo_metodo_involutivo.aux) ) 
+Here is how much of TeX's memory you used:
+ 24260 strings out of 478023
+ 420136 string characters out of 5842667
+ 824488 words of memory out of 5000000
+ 41865 multiletter control sequences out of 15000+600000
+ 541842 words of font info for 175 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 74i,19n,85p,1020b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvi
+ps/lm/lm-ts1.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{
+c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-
+dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/l
+m/lm-mathit.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c
+:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/tex
+mf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type
+1/public/lm/lmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.p
+fb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.
+pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/20
+22/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/font
+s/type1/public/lm/lmsy10.pfb>
+Output written on Laudo_metodo_involutivo.pdf (74 pages, 14041637 bytes).
+PDF statistics:
+ 1277 PDF objects out of 1440 (max. 8388607)
+ 977 compressed objects within 10 object streams
+ 204 named destinations out of 1000 (max. 500000)
+ 43771 words of extra memory for PDF output out of 51595 (max. 10000000)
+

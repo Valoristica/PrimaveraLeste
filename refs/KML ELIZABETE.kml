@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+	<name>KML ELIZABETH</name>
+	<description><![CDATA[Powered by Neyton<br/>http://tbn2.blogspot.com/]]></description>
+	<visibility>1</visibility>
+	<open>1</open>
+	<Style id="icones">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon24.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+
+	<Style id="0">
+		<LineStyle id="l0LineStyle">
+			<color>ffFFFFFF</color>
+		</LineStyle>
+		<PolyStyle id="p0PolyStyle">
+			<color>7fFFFFFF</color>
+			<fill>1</fill>
+			<outline>1</outline>
+		</PolyStyle>
+	</Style>
+
+	<Folder>
+		<name>0</name>
+		<visibility>1</visibility>
+		<open>0</open>
+
+		<Placemark>
+			<name>11F6</name>
+			<description><![CDATA[]]></description>
+			<styleUrl>#0</styleUrl>
+			<LineString>
+				<coordinates>
+					-54.23779423976093,-15.54355700755061,0.000
+					-54.23818984283394,-15.54219212193326,0.000
+					-54.24873716790446,-15.54736838929128,0.000
+					-54.24872043129472,-15.54848118583497,0.000
+					-54.24849717214784,-15.54934676550187,0.000
+					-54.24825116332324,-15.54990452821552,0.000
+					-54.24762969475182,-15.55079261645683,0.000
+					-54.24585430659858,-15.55318924966103,0.000
+					-54.24581731741532,-15.55323409451536,0.000
+					-54.24513603894646,-15.55318764097016,0.000
+					-54.24405691401393,-15.55403134640872,0.000
+					-54.24393892883051,-15.55439773396087,0.000
+					-54.23705753553954,-15.55281260881875,0.000
+					-54.23233139478325,-15.54801506557882,0.000
+					-54.23779423976093,-15.54355700755061,0.000
+				</coordinates>
+				<altitudeMode>clampedToGround</altitudeMode>
+			</LineString>
+		</Placemark>
+
+	</Folder>
+
+</Document>
+</kml>
